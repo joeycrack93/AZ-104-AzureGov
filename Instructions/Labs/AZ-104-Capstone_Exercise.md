@@ -9,7 +9,7 @@ lab:
 
 ## Lab scenario
 
-You have an urgent customer/user request to build a new Azure Environment for a critical mission need. You will need to evaluate Azure functionality that you have covered as part of the week long training sessions to build Azure resources, focusing in particular on Azure virtual machines. To accomplish this, you will need to work as a team to build out the entire suite of capabilities that is Azure. You will only have a single subscription to handle the required resources so you will need to leverage Azure Resource Groups for logical seperation. All accounts have already been provisioned so there is no need to do any work at the AzureAD tenant level.
+You have an urgent customer/user request to build a new Azure Environment for a critical mission need. You will need to evaluate Azure functionality that you have covered as part of the week long training sessions to build Azure resources, focusing in particular on Azure virtual machines, App Services and Azure Kubernetes Services. To accomplish this, you will need to work as an individual or team as the situation permits to build out the entire suite of capabilities that is Azure. You will only have a single subscription to handle the required resources so you will need to leverage Azure Resource Groups for logical seperation. All accounts have already been provisioned so there is no need to do any work at the AzureAD tenant level.
 
 ## Objectives
 
@@ -27,6 +27,10 @@ In this lab, you will:
 + Task 7: Clean-up your environment
 
 ## Estimated timing: 4+ hours
+
+## Architecture diagram
+
+![image](../media/az104capstone-png.png)
 
 ## Instructions
 
