@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Capstone - Build an Azure Environment Capstone'
-    module: 'Capstone'
----
-
 # Capstone - Build an Azure Environment Capstone
 # Student lab manual
 
