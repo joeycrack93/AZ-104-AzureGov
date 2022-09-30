@@ -1,0 +1,147 @@
+{
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "author": "Cloud Maker",
+    "comments": "Generated with Cloud Maker. Try it yourself at https://cloudmaker.ai."
+  },
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "parameters": {},
+  "variables": {
+    "networkInterface1": "keycloak01-nic",
+    "networkInterface2": "keycloak02-nic",
+    "networkInterfaceIPConfiguration1": "config1",
+    "networkInterfaceIPConfiguration2": "config1",
+    "resourceGroup1": "rg-az104-cap-usgaz-hub",
+    "subnet1": "vnet-az104-cap-usgva-identity",
+    "virtualMachine1": "keycloak01",
+    "virtualMachine2": "keycloak02",
+    "virtualMachineOSDiskLinux1": "keycloak01-osdisk",
+    "virtualMachineOSDiskLinux2": "keycloak02-osdisk",
+    "virtualNetwork1": "vnet-az104-cap-usgva-identity"
+  },
+  "resources": [
+    {
+      "apiVersion": "2020-08-01",
+      "type": "Microsoft.Network/networkInterfaces",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-08-01/networkInterfaces",
+      "name": "[variables('networkInterface1')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "ipConfigurations": [
+          {
+            "properties": {
+              "subnet": {
+                "id": "[resourceId(variables('resourceGroup1'), 'Microsoft.Network/virtualNetworks/subnets', variables('virtualNetwork1'), variables('subnet1'))]"
+              }
+            },
+            "name": "[variables('networkInterfaceIPConfiguration1')]"
+          }
+        ],
+        "enableIPForwarding": false
+      }
+    },
+    {
+      "apiVersion": "2022-03-01",
+      "type": "Microsoft.Compute/virtualMachines",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Compute/2022-03-01/virtualMachines",
+      "name": "[variables('virtualMachine1')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "hardwareProfile": {
+          "vmSize": "Standard_B2ms"
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterface1'))]"
+            }
+          ]
+        },
+        "osProfile": {
+          "adminUsername": "adminuser",
+          "computerName": "vmname",
+          "secrets": []
+        },
+        "storageProfile": {
+          "dataDisks": [],
+          "imageReference": {
+            "offer": "0001-com-ubuntu-server-focal",
+            "publisher": "canonical",
+            "sku": "20_04-lts",
+            "version": "latest"
+          },
+          "osDisk": {
+            "name": "[variables('virtualMachineOSDiskLinux1')]",
+            "createOption": "FromImage"
+          }
+        }
+      },
+      "zones": [],
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterface1'))]"
+      ]
+    },
+    {
+      "apiVersion": "2020-08-01",
+      "type": "Microsoft.Network/networkInterfaces",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-08-01/networkInterfaces",
+      "name": "[variables('networkInterface2')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "ipConfigurations": [
+          {
+            "properties": {
+              "subnet": {
+                "id": "[resourceId(variables('resourceGroup1'), 'Microsoft.Network/virtualNetworks/subnets', variables('virtualNetwork1'), variables('subnet1'))]"
+              }
+            },
+            "name": "[variables('networkInterfaceIPConfiguration2')]"
+          }
+        ],
+        "enableIPForwarding": false
+      }
+    },
+    {
+      "apiVersion": "2022-03-01",
+      "type": "Microsoft.Compute/virtualMachines",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Compute/2022-03-01/virtualMachines",
+      "name": "[variables('virtualMachine2')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "hardwareProfile": {
+          "vmSize": "Standard_B2ms"
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterface2'))]"
+            }
+          ]
+        },
+        "osProfile": {
+          "adminUsername": "adminuser",
+          "computerName": "vmname",
+          "secrets": []
+        },
+        "storageProfile": {
+          "dataDisks": [],
+          "imageReference": {
+            "offer": "0001-com-ubuntu-server-focal",
+            "publisher": "canonical",
+            "sku": "20_04-lts",
+            "version": "latest"
+          },
+          "osDisk": {
+            "name": "[variables('virtualMachineOSDiskLinux2')]",
+            "createOption": "FromImage"
+          }
+        }
+      },
+      "zones": [],
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterface2'))]"
+      ]
+    }
+  ],
+  "outputs": {}
+}

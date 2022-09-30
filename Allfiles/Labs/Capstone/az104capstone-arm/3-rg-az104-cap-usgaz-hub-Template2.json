@@ -1,0 +1,112 @@
+{
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "author": "Cloud Maker",
+    "comments": "Generated with Cloud Maker. Try it yourself at https://cloudmaker.ai."
+  },
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "parameters": {},
+  "variables": {
+    "bastion1": "bast-az104-usgaz",
+    "networkSecurityGroup1": "NSG-Jumpbox",
+    "publicIpAddress1": "pip-az104-bast-usgaz",
+    "subnet1": "rg-az104-cap-usgaz-hub",
+    "subnet2": "Subnet-Jumpbox",
+    "virtualNetwork1": "vnet-az104-cap-usgaz-hub"
+  },
+  "resources": [
+    {
+      "apiVersion": "2020-08-01",
+      "type": "Microsoft.Network/publicIPAddresses",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-08-01/publicIPAddresses",
+      "name": "[variables('publicIpAddress1')]",
+      "location": "[resourceGroup().location]",
+      "sku": {
+        "name": "Standard"
+      },
+      "properties": {
+        "publicIPAllocationMethod": "Static",
+        "ipTags": []
+      },
+      "zones": []
+    },
+    {
+      "apiVersion": "2020-08-01",
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-08-01/networkSecurityGroups",
+      "name": "[variables('networkSecurityGroup1')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "securityRules": []
+      }
+    },
+    {
+      "apiVersion": "2020-08-01",
+      "type": "Microsoft.Network/virtualNetworks",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-08-01/virtualNetworks",
+      "name": "[variables('virtualNetwork1')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "10.52.0.0/16"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "[variables('subnet1')]",
+            "properties": {
+              "addressPrefix": "10.52.255.0/24",
+              "serviceEndpoints": [],
+              "serviceEndpointPolicies": [],
+              "delegations": []
+            }
+          },
+          {
+            "name": "[variables('subnet2')]",
+            "properties": {
+              "addressPrefix": "10.52.0.0/24",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroup1'))]"
+              },
+              "serviceEndpoints": [],
+              "serviceEndpointPolicies": [],
+              "delegations": []
+            }
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroup1'))]"
+      ]
+    },
+    {
+      "apiVersion": "2021-05-01",
+      "type": "Microsoft.Network/bastionHosts",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Network/2021-05-01/bastionHosts",
+      "name": "[variables('bastion1')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "ipConfig",
+            "properties": {
+              "subnet": {
+                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetwork1'), variables('subnet1'))]"
+              },
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIpAddress1'))]"
+              }
+            }
+          }
+        ],
+        "scaleUnits": 2
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetwork1'))]",
+        "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIpAddress1'))]"
+      ]
+    }
+  ],
+  "outputs": {}
+}

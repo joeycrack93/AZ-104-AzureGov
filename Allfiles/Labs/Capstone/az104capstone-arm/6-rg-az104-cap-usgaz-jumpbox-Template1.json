@@ -1,0 +1,90 @@
+{
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "author": "Cloud Maker",
+    "comments": "Generated with Cloud Maker. Try it yourself at https://cloudmaker.ai."
+  },
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "parameters": {
+    "adminpassword": {
+      "type": "secureString"
+    }
+  },
+  "variables": {
+    "networkInterface1": "dsvm-jump-01-nic01",
+    "networkInterfaceIPConfiguration1": "config1",
+    "resourceGroup1": "rg-az104-cap-usgaz-hub",
+    "subnet1": "Subnet-Jumpbox",
+    "virtualMachine1": "dsvm-jump-01",
+    "virtualMachineOSDiskWindows1": "dsvm-jump-01-osdisk",
+    "virtualNetwork1": "vnet-az104-cap-usgaz-hub"
+  },
+  "resources": [
+    {
+      "apiVersion": "2020-08-01",
+      "type": "Microsoft.Network/networkInterfaces",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-08-01/networkInterfaces",
+      "name": "[variables('networkInterface1')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "ipConfigurations": [
+          {
+            "properties": {
+              "subnet": {
+                "id": "[resourceId(variables('resourceGroup1'), 'Microsoft.Network/virtualNetworks/subnets', variables('virtualNetwork1'), variables('subnet1'))]"
+              }
+            },
+            "name": "[variables('networkInterfaceIPConfiguration1')]"
+          }
+        ],
+        "enableIPForwarding": false
+      }
+    },
+    {
+      "apiVersion": "2022-03-01",
+      "type": "Microsoft.Compute/virtualMachines",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Compute/2022-03-01/virtualMachines",
+      "name": "[variables('virtualMachine1')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "hardwareProfile": {
+          "vmSize": "Standard_B2ms"
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterface1'))]"
+            }
+          ]
+        },
+        "osProfile": {
+          "adminPassword": "[parameters('adminpassword')]",
+          "adminUsername": "azureadmin",
+          "computerName": "dsvm-jump-01",
+          "secrets": [],
+          "windowsConfiguration": {
+            "enableAutomaticUpdates": true
+          }
+        },
+        "storageProfile": {
+          "dataDisks": [],
+          "imageReference": {
+            "offer": "WindowsServer",
+            "publisher": "MicrosoftWindowsServer",
+            "sku": "2019-Datacenter",
+            "version": "latest"
+          },
+          "osDisk": {
+            "name": "[variables('virtualMachineOSDiskWindows1')]",
+            "createOption": "FromImage"
+          }
+        }
+      },
+      "zones": [],
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterface1'))]"
+      ]
+    }
+  ],
+  "outputs": {}
+}

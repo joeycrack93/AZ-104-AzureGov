@@ -1,0 +1,98 @@
+{
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "author": "Cloud Maker",
+    "comments": "Generated with Cloud Maker. Try it yourself at https://cloudmaker.ai."
+  },
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "parameters": {},
+  "variables": {
+    "networkSecurityGroup1": "NSG-USGVA-Keycloak",
+    "networkSecurityGroup2": "NSG-USGVA-Kion",
+    "storageAccount1": "az104capusgvaidentdiag",
+    "subnet1": "vnet-az104-cap-usgva-identity",
+    "subnet2": "Subnet-Kion",
+    "virtualNetwork1": "vnet-az104-cap-usgva-identity"
+  },
+  "resources": [
+    {
+      "apiVersion": "2019-04-01",
+      "type": "Microsoft.Storage/storageAccounts",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Storage/2019-04-01/storageAccounts",
+      "name": "[variables('storageAccount1')]",
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "kind": "StorageV2",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "supportsHttpsTrafficOnly": true
+      }
+    },
+    {
+      "apiVersion": "2020-08-01",
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-08-01/networkSecurityGroups",
+      "name": "[variables('networkSecurityGroup1')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "securityRules": []
+      }
+    },
+    {
+      "apiVersion": "2020-08-01",
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-08-01/networkSecurityGroups",
+      "name": "[variables('networkSecurityGroup2')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "securityRules": []
+      }
+    },
+    {
+      "apiVersion": "2020-08-01",
+      "type": "Microsoft.Network/virtualNetworks",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-08-01/virtualNetworks",
+      "name": "[variables('virtualNetwork1')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "10.0.0.0/16"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "[variables('subnet1')]",
+            "properties": {
+              "addressPrefix": "10.0.1.0/24",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroup1'))]"
+              },
+              "serviceEndpoints": [],
+              "serviceEndpointPolicies": [],
+              "delegations": []
+            }
+          },
+          {
+            "name": "[variables('subnet2')]",
+            "properties": {
+              "addressPrefix": "10.0.2.0/24",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroup2'))]"
+              },
+              "serviceEndpoints": [],
+              "serviceEndpointPolicies": [],
+              "delegations": []
+            }
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroup1'))]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroup2'))]"
+      ]
+    }
+  ],
+  "outputs": {}
+}

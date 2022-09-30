@@ -1,0 +1,85 @@
+{
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "author": "Cloud Maker",
+    "comments": "Generated with Cloud Maker. Try it yourself at https://cloudmaker.ai."
+  },
+  "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+  "parameters": {
+    "location": {
+      "type": "string"
+    },
+    "location-usgaz": {
+      "type": "string"
+    }
+  },
+  "variables": {
+    "resourceGroup1": "rg-az104-cap-usgaz-hub",
+    "resourceGroup2": "rg-az104-cap-usgaz-hub",
+    "resourceGroup3": "rg-az104-cap-usgaz-hub",
+    "resourceGroup4": "rg-az104-cap-usgva-jumpbox",
+    "resourceGroup5": "rg-az104-cap-usgaz-jumpbox",
+    "resourceGroup6": "rg-az104-cap-usgva-keycloak",
+    "resourceGroup7": "rg-az104-cap-usgva-kion",
+    "resourceGroup8": "rg-az104-cap-usgva-applications"
+  },
+  "resources": [
+    {
+      "apiVersion": "2019-05-01",
+      "type": "Microsoft.Resources/resourceGroups",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Resources/2019-05-01/resourceGroups",
+      "name": "[variables('resourceGroup1')]",
+      "location": "[parameters('location')]"
+    },
+    {
+      "apiVersion": "2019-05-01",
+      "type": "Microsoft.Resources/resourceGroups",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Resources/2019-05-01/resourceGroups",
+      "name": "[variables('resourceGroup2')]",
+      "location": "[parameters('location-usgaz')]"
+    },
+    {
+      "apiVersion": "2019-05-01",
+      "type": "Microsoft.Resources/resourceGroups",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Resources/2019-05-01/resourceGroups",
+      "name": "[variables('resourceGroup3')]",
+      "location": "[parameters('location-usgaz')]"
+    },
+    {
+      "apiVersion": "2019-05-01",
+      "type": "Microsoft.Resources/resourceGroups",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Resources/2019-05-01/resourceGroups",
+      "name": "[variables('resourceGroup4')]",
+      "location": "[resourceGroup().location]"
+    },
+    {
+      "apiVersion": "2019-05-01",
+      "type": "Microsoft.Resources/resourceGroups",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Resources/2019-05-01/resourceGroups",
+      "name": "[variables('resourceGroup5')]",
+      "location": "[resourceGroup().location]"
+    },
+    {
+      "apiVersion": "2019-05-01",
+      "type": "Microsoft.Resources/resourceGroups",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Resources/2019-05-01/resourceGroups",
+      "name": "[variables('resourceGroup6')]",
+      "location": "[parameters('location')]"
+    },
+    {
+      "apiVersion": "2019-05-01",
+      "type": "Microsoft.Resources/resourceGroups",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Resources/2019-05-01/resourceGroups",
+      "name": "[variables('resourceGroup7')]",
+      "location": "[parameters('location')]"
+    },
+    {
+      "apiVersion": "2019-05-01",
+      "type": "Microsoft.Resources/resourceGroups",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Resources/2019-05-01/resourceGroups",
+      "name": "[variables('resourceGroup8')]",
+      "location": "[parameters('location')]"
+    }
+  ],
+  "outputs": {}
+}

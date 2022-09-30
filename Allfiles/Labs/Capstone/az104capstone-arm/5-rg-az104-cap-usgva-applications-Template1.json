@@ -1,0 +1,79 @@
+{
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "author": "Cloud Maker",
+    "comments": "Generated with Cloud Maker. Try it yourself at https://cloudmaker.ai."
+  },
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "parameters": {},
+  "variables": {
+    "appService1": "webapp-az104-cap-wordpress",
+    "kubernetesServiceAgentPoolPrimarySystem1": "aks-az104-cap-pool",
+    "kubernetesServiceContainer1": "aks-az104-cap-helloworld",
+    "webServerfarm1": "asp-az104-cap-wordpress"
+  },
+  "resources": [
+    {
+      "apiVersion": "2021-08-01",
+      "type": "Microsoft.ContainerService/managedClusters",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.ContainerService/2021-08-01/managedClusters",
+      "name": "[variables('kubernetesServiceContainer1')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "agentPoolProfiles": [
+          {
+            "name": "[variables('kubernetesServiceAgentPoolPrimarySystem1')]",
+            "type": "AvailabilitySet",
+            "count": 1,
+            "mode": "System",
+            "nodeTaints": [],
+            "osType": "Linux",
+            "vmSize": "Standard_B2ms"
+          }
+        ],
+        "enableRBAC": true,
+        "kubernetesVersion": "1.21.2"
+      }
+    },
+    {
+      "apiVersion": "2020-12-01",
+      "type": "Microsoft.Web/serverfarms",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Web/2020-12-01/serverfarms",
+      "name": "[variables('webServerfarm1')]",
+      "location": "[resourceGroup().location]",
+      "properties": {},
+      "sku": {
+        "name": "F1"
+      }
+    },
+    {
+      "apiVersion": "2020-12-01",
+      "type": "Microsoft.Web/sites",
+      "comments": "Property reference: https://docs.microsoft.com/en-us/azure/templates/Microsoft.Web/2020-12-01/sites",
+      "name": "[variables('appService1')]",
+      "kind": "app",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "httpsOnly": true,
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('webServerfarm1'))]",
+        "siteConfig": {
+          "appSettings": [],
+          "connectionStrings": [],
+          "defaultDocuments": [],
+          "detailedErrorLoggingEnabled": true,
+          "handlerMappings": [],
+          "httpLoggingEnabled": true,
+          "ipSecurityRestrictions": [],
+          "minTlsVersion": "1.2",
+          "remoteDebuggingEnabled": false,
+          "scmIpSecurityRestrictions": [],
+          "webSocketsEnabled": false
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/serverfarms', variables('webServerfarm1'))]"
+      ]
+    }
+  ],
+  "outputs": {}
+}
