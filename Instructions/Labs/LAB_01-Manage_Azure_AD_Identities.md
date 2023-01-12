@@ -1,9 +1,3 @@
----
-lab:
-    title: '01 - Manage Azure Active Directory Identities'
-    module: 'Administer Identity'
----
-
 # Lab 01 - Manage Azure Active Directory Identities
 
 # Student lab manual
