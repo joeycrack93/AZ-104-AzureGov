@@ -1,9 +1,3 @@
----
-lab:
-    title: '03a - Manage Azure resources by Using the Azure Portal'
-    module: 'Administer Azure Resources'
----
-
 # Lab 03a - Manage Azure resources by Using the Azure Portal
 # Student lab manual
 
