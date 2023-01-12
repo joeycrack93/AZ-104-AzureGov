@@ -1,9 +1,8 @@
-# Lab 03a - Manage Azure resources by Using the Azure Portal
-# Student lab manual
+# Instructor readme
 
-## Lab scenario
+## Key requirements for lab environment
 
-You need to explore the basic Azure administration capabilities associated with provisioning resources and organizing them based on resource groups, including moving resources between resource groups. You also want to explore options for protecting disk resources from being accidentally deleted, while still allowing for modifying their performance characteristics and size.
+Lab steps in this repo assume a few steps have already been set up in the Azure Government tenant.
 
 **Note:** An **[interactive lab simulation](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%204)** is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
 
