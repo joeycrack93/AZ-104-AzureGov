@@ -1,15 +1,12 @@
----
-lab:
-    title: '02a - Manage Subscriptions and RBAC'
-    module: 'Administer Governance and Compliance'
----
-
 # Lab 02a - Manage Subscriptions and RBAC
-# Student lab manual
 
-## Lab requirements
+# Important note for labs in **Azure Government** tenant
 
-This lab requires permissions to create Azure Active Directory (Azure AD) users, create custom Azure Role Based Access Control (RBAC) roles, and assign these roles to Azure AD users. Not all lab hosters may provide this capability. Ask your instructor for the availability of this lab.
+Labs 01 to 02b **will only function if you have full ownership of your tenant**. If you are using a provided student account, you do not have required permissions and should utilize the interactive lab simulation below **or** sign up for a [free Azure account + tenant](https://azure.microsoft.com/en-us/free/search/)
+
+*Note when using free Azure tenant - Please notify your instructor, if applicable, if you're using this option. There are minor differences in the lab steps and JSON parameters that must be modified.*
+
+
 
 ## Lab scenario
 
