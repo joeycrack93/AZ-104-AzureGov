@@ -38,7 +38,7 @@ In this task, you will create and assign a tag to an Azure resource group via th
 1. In the Azure portal, start a **PowerShell** session within the **Cloud Shell**. Cloud Shell is located in the top-right portion of the screen. It is the first icon to the right of the topmost search bar. 
 
    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message.
-   >>If using a Microsoft-provided tenant,  select "Show advanced settings". Subscription, region, and resource group should have values populated and left as-is. For "Storage account", select ""create new"" and provide a "globally unique" name. For "File share", select ""create new"" and provide a name. It does not have to be globally unique.
+   >>If using a Microsoft-provided tenant,  select **Show advanced settings**. Subscription, region, and resource group should have values populated and left as-is. For **Storage account**, select **create new** and provide a **globally unique** name. For **File share**, select **create new** and provide a name. It does not have to be globally unique.
    >>If using a personal Azure tenant, select the subscription you are using in this lab, and click **Create storage**. 
 
 1. From the Cloud Shell pane, run the following to identify the name of the storage account used by Cloud Shell:
