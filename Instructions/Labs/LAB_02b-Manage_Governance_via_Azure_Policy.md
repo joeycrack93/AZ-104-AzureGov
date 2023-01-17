@@ -217,7 +217,7 @@ In this task, we will use a different policy definition to remediate any non-com
 
 1. Click **Overview** and select the most recent storage account you created [not Cloud Shell storage acc]. Select **Delete** on the top of the storage account blade. When prompted for the confirmation, in the **Delete storage account** blade, type the name of the storage account to confirm and click **Delete**. 
 
-Bonus: Navigate to your Cloud Shell storage account. Select **Delete** on the top of the storage account blade. Notice it can't be deleted because of the delete lock  we assigned to it previously _[steps 5 and 6]_. Please leave the delete lock in place as you will be using Cloud Shell the remainder of the labs. 
+**Bonus**: Navigate to your Cloud Shell storage account. Select **Delete** on the top of the storage account blade. Notice it can't be deleted because of the delete lock  we assigned to it previously _[steps 5 and 6]_. Please leave the delete lock in place as you will be using Cloud Shell the remainder of the labs. 
    >**Note**: You will be creating and deleting many resources throughout the remaining labs, but it's generally easier to have a single Cloud Shell storage account persist.
 
 #### Review
