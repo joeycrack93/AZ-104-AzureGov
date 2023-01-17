@@ -162,8 +162,8 @@ In this task, we will use a different policy definition to remediate any non-com
 
     | Setting | Value |
     | --- | --- |
-    | Assignment name | **Inherit the Role tag and its Infra value from the Cloud Shell resource group if missing**|
-    | Description | **Inherit the Role tag and its Infra value from the Cloud Shell resource group if missing**|
+    | Assignment name | **Inherit the Role tag and its Infra value from the resource group containing the Cloud Shell storage account if missing**|
+    | Description | **Inherit the Role tag and its Infra value from the resource group containing the Cloud Shell storage account if missing**|
     | Policy enforcement | Enabled |
 
 1. Click **Next** and set **Parameters** to the following values:
