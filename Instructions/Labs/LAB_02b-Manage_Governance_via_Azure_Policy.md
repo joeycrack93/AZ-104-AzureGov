@@ -55,6 +55,8 @@ In this task, you will create and assign a tag to an Azure resource group via th
    ```
 
 1. In the Azure portal, search and select **Storage accounts** and, in the list of the storage accounts, click the entry representing the storage account you identified in the previous step.
+2. On the left-hand column, scroll down on settings blade and under **Settings** select **Locks**.
+3. Select **+ Add**. Give the lock a name [ex: delete-lock]. For Lock type, select **Delete**. Add a note as needed [ex: This lock is to prevent accidental deletion of cloud shell storage account]
 
 1. On the storage account blade, click the link representing the name of the resource group containing the storage account.
 
