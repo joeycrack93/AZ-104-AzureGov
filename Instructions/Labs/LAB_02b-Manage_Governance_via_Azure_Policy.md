@@ -211,11 +211,13 @@ In this task, we will use a different policy definition to remediate any non-com
 
 1. In the **Authoring** section, click **Assignments**, click the ellipsis icon to the right of the assignment you created in the previous task and click **Delete assignment**. 
 
-1. In the portal, search for and select **Storage accounts**.
+1. In the portal, search for and select **Resource groups**.
 
-1. In the list of storage accounts, select the resource group corresponding to the storage account you created in the last task of this lab. Select **Tags** and click **Delete** (Trash can to the right) to the **Role:Infra** tag and press **Apply**. 
+1. In the list of resource groups, select the one that contains the Cloud Shell storage account. Select **Tags** and click **Delete** (Trash can to the right) to the **Role:Infra** tag and press **Apply**. 
 
-1. Click **Overview** and click **Delete** on the top of the storage account blade. When prompted for the confirmation, in the **Delete storage account** blade, type the name of the storage account to confirm and click **Delete**. 
+1. Click **Overview** and select the most recent storage account you created [not Cloud Shell storage acc]. Select **Delete** on the top of the storage account blade. When prompted for the confirmation, in the **Delete storage account** blade, type the name of the storage account to confirm and click **Delete**. 
+
+Bonus: Navigate to your Cloud Shell storage account. Select **Delete** on the top of the storage account blade. Notice it can't be deleted because of the delete lock that we assigned to it previously [step 5]
 
 #### Review
 
