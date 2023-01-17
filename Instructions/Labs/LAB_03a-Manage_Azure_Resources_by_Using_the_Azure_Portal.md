@@ -11,7 +11,7 @@ You need to explore the basic Azure administration capabilities associated with 
 
 In this lab, we will:
 
-+ Task 1: Create resource groups and deploy resources to resource groups
++ Task 1: Deploy resources to resource groups
 + Task 2: Move resources between resource groups
 + Task 3: Implement and test resource locks
 
@@ -29,20 +29,20 @@ In this lab, we will:
 
 In this task, you will use the Azure portal to create resource groups and create a disk in the resource group.
 
-1. Sign in to the [**Azure portal**](http://portal.azure.com).
+1. Sign in to the [**Azure portal**](http://portal.azure.us).
 
 1. In the Azure portal, search for and select **Disks**, click **+ Create** and specify the following settings:
 
     |Setting|Value|
     |---|---|
-    |Subscription| the name of the Azure subscription where you created the resource group |
-    |Resource Group| the name of a new resource group **az104-03a-rg1** |
+    |Subscription| the name of the Azure subscription you are using in this lab |
+    |Resource Group| the name of your existing RG _[ex: rg1-az104-student01]_ |
     |Disk name| **az104-03a-disk1** |
-    |Region| **(US) East US** |
+    |Region| **(US) USGov Virginia** |
     |Availability zone| **None** |
     |Source type| **None** |
 
-    >**Note**: When creating a resource, you have the option of creating a new resource group or using an existing one.
+    >**Note**: When creating a resource, you have the option of creating a new resource group or using an existing one. If using instructor-provided account, you will not have permission to create a new resource group.
 
 1. Change the disk type and size to **Standard HDD** and **32 GiB**, respectively.
 
@@ -56,13 +56,13 @@ In this task, we will move the disk resource you created in the previous task to
 
 1. Search for and select **Resource groups**. 
 
-1. On the **Resource groups** blade, click the entry representing the **az104-03a-rg1** resource group you created in the previous task.
+1. On the **Resource groups** blade, click the entry representing the resource group you deployed the disk to in the previous task _[ex: rg1-az104-student01]_.
 
 1. From the **Overview** blade of the resource group, in the list of resource group resources, select the entry representing the newly created disk, click **Move** in the toolbar, and, in the drop-down list, select **Move to another resource group**.
 
     >**Note**: This method allows you to move multiple resources at the same time. 
 
-1. Below the **Resource group** text box, click **Create new** then type **az104-03a-rg2** in the text box. On the Review tab, select the checkbox **I understand that tools and scripts associated with moved resources will not work until I update them to use new resource IDs**, and click **Move**.
+1. In the target **Resource group** text box, select the remaining resource group _[ex: rg2-az104-student01]_. On the Review tab, select the checkbox **I understand that tools and scripts associated with moved resources will not work until I update them to use new resource IDs**, and click **Move**.
 
     >**Note**: Do not wait for the move to complete but instead proceed to the next task. The move might take about 10 minutes. You can determine that the operation was completed by monitoring activity log entries of the source or target resource group. Revisit this step once you complete the next task.
 
