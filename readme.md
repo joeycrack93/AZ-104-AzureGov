@@ -2,7 +2,7 @@
 
 ## Welcome
 
-This repository is to assist instructors and students working through AZ-104 certification material from the context of an Azure Government Tenant. If you are in a Microsoft-led class, please ask your instructor for clarity/assistance as needed.
+This repository is to assist instructors and students working through AZ-104 certification material from the context of an **Azure Government Tenant**. If you are in a Microsoft-led class, please ask your instructor for clarity/assistance as needed.
 
 ## Security Issue - February 2022
 
