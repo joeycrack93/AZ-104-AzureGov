@@ -73,7 +73,7 @@ In this task, you will create and assign a tag to an Azure resource group via th
     | Name | **Role** |
     | Value | **Infra** |
 
-1. Navigate back to the storage account blade. Review the **Overview** information and note that the new tag was not automatically assigned to the storage account. 
+1. Navigate back to the storage account blade. Review the **Overview** information and note that the new tag was **not automatically assigned** to the storage account. 
 
 #### Task 2: Enforce tagging via an Azure policy
 
