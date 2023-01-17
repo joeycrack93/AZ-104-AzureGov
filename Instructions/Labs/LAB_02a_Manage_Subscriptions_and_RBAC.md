@@ -39,6 +39,8 @@ In this lab, you will:
 
 ## Instructions
 
+### **Reminder, you will not be able to complete this lab if using an instructor-provided account due to permission limitations.
+
 ### Exercise 1
 
 #### Task 1: Implement Management Groups
