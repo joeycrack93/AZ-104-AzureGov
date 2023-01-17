@@ -39,7 +39,7 @@ In this lab, you will:
 
 ## Instructions
 
-### **Reminder, you will not be able to complete this lab if using an instructor-provided account due to permission limitations.
+### **Reminder, you will not be able to complete this lab if using an instructor-provided account due to permission limitations. For more info, see Lab01 readme.
 
 ### Exercise 1
 
