@@ -1,6 +1,6 @@
 # Lab 01 - Manage Azure Active Directory Identities
 
-# Important note for labs in **Azure Government** tenant
+# !!Important note for labs in **Azure Government** tenant!!
 
 Labs 01 to 02b **will only function if you have full ownership of your tenant**. If you are using a provided student account, you do not have required permissions and should utilize the interactive lab simulation below **or** sign up for a [free Azure account + tenant](https://azure.microsoft.com/en-us/free/search/)
 
