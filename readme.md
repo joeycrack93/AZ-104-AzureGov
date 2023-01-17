@@ -2,11 +2,7 @@
 
 ## Welcome
 
-This repository is for instructors teaching Microsoft courses. If you are in class, please ask your instructor for assistance. 
-
-- **[Link to labs (HTML format)](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/)**
-- **Are you a MCT?** - Have a look at our [GitHub User Guide for MCTs](https://microsoftlearning.github.io/MCT-User-Guide/)
-- To preview this course in a self-paced format, see our **[interactive lab simulations](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator)**. You may find slight differences between the interactive simulations and the hosted labs, but the core concepts and ideas being demonstrated are the same.
+This repository is to assist instructors and students working through AZ 104 certification material from the context of an Azure Government Tenant. If you are in a Microsoft-led class, please ask your instructor for clarity/assistance as needed.
 
 ## Security Issue - February 2022
 
