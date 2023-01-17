@@ -25,9 +25,9 @@ In this lab, we will:
 
 ### Exercise 1
 
-#### Task 1: Create resource groups and deploy resources to resource groups
+#### Task 1: Deploy resources to resource groups
 
-In this task, you will use the Azure portal to create resource groups and create a disk in the resource group.
+In this task, you will use the Azure portal to create a disk in a resource group.
 
 1. Sign in to the [**Azure portal**](http://portal.azure.us).
 
@@ -75,9 +75,9 @@ In this task, you will apply a resource lock to an Azure resource group containi
     |Setting|Value|
     |---|---|
     |Subscription| the name of the subscription you are using in this lab |
-    |Resource Group| click **create new** resource group and name it **az104-03a-rg3** |
+    |Resource Group| select your second resource group _[ex: rg2-az104-student01]_ |
     |Disk name| **az104-03a-disk2** |
-    |Region| the name of the Azure region where you created the other resource groups in this lab |
+    |Region| USGov Virginia |
     |Availability zone| **None** |
     |Source type| **None** |
 
