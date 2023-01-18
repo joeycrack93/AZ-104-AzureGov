@@ -105,26 +105,16 @@ In this task, you will managing configuration of the Azure managed disk by using
 
  > **Note**:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a long time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
 
-1. In the Azure portal, open the **Bash** shell session within the **Cloud Shell** pane.
-
-1. List all resource groups created throughout the labs of this module by running the following command:
-
-   ```sh
-   az group list --query "[?starts_with(name,'az104-03')].name" --output tsv
-   ```
-
-1. Delete all resource groups you created throughout the labs of this module by running the following command:
-
-   ```sh
-   az group list --query "[?starts_with(name,'az104-03')].[name]" --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-   ```
-
-    >**Note**: The command executes asynchronously (as determined by the --nowait parameter), so while you will be able to run another Azure CLI command immediately afterwards within the same Bash session, it will take a few minutes before the resource groups are actually removed.
+1. In the Azure portal, In the Azure portal, search for and select **Resource groups**.
+2. Select your first resource group _[ex: rg1-az104-student01]_
+3. Select each resource, except your **Cloud Shell storage account**, by checking the box to the left of each resource name.
+4. Click **Delete** in the top-right portion of the Azure Portal within the resource group pane.
+5. Repeat the previous steps to delete resources in your remaining resource groups.
 
 #### Review
 
 In this lab, you have:
 
 - Started a Bash session in Azure Cloud Shell
-- Created a resource group and an Azure managed disk by using Azure CLI
+- Created an Azure managed disk by using Azure CLI
 - Configured the managed disk by using Azure CLI
