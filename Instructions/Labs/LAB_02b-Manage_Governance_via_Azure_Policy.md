@@ -39,7 +39,6 @@ In this task, you will create and assign a tag to an Azure resource group via th
 
    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message.
    >>If using a intructor-provided tenant,  select **Show advanced settings**. Subscription, region, and resource group should have values populated and left as-is. For **Storage account**, select **create new** and provide a **globally unique** name [Example: cshellstorageaz104kdnjzn]. For **File share**, select **create new** and provide a name. It does not have to be globally unique [Example: cloudshell].
-   
    >>If using a personal Azure tenant, select the subscription you are using in this lab, and click **Create storage**. 
 
 1. From the Cloud Shell pane, run the following to identify the name of the storage account used by Cloud Shell:
