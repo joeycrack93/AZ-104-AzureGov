@@ -265,6 +265,9 @@ In this task, you will test connectivity between virtual machines on the three v
  > **Note**: Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a long time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
 
 1. In the Azure portal, In the Azure portal, search for and select **Resource groups**.
+
+> **Note**:  You can safely ignore the NetworkWatcherRG as you only have read permissions if using an instructor-provided account. That RG is needed for lab 06.
+
 2. Select your first resource group _[ex: rg1-az104-student01]_
 3. Select each resource, except your **Cloud Shell storage account**, by checking the box to the left of each resource name.
 4. Click **Delete** in the top-right portion of the Azure Portal within the resource group pane.
