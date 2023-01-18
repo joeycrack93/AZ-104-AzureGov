@@ -12,7 +12,7 @@ Now that you explored the basic Azure administration capabilities associated wit
 In this lab, you will:
 
 + Task 1: Start a PowerShell session in Azure Cloud Shell
-+ Task 2: Create a resource group and an Azure managed disk by using Azure PowerShell
++ Task 2: Create an Azure managed disk by using Azure PowerShell
 + Task 3: Configure the managed disk by using Azure PowerShell
 
 ## Estimated timing: 20 minutes
@@ -42,20 +42,19 @@ In this task, you will open a PowerShell session in Cloud Shell.
 
 1. Ensure **PowerShell** appears in the drop-down menu in the upper-left corner of the Cloud Shell pane.
 
-#### Task 2: Create a resource group and an Azure managed disk by using Azure PowerShell
+#### Task 2: Create an Azure managed disk by using Azure PowerShell
 
-In this task, you will create a resource group and an Azure managed disk by using Azure PowerShell session within Cloud Shell
+In this task, you will create an Azure managed disk in an existing resource group by using Azure PowerShell session within Cloud Shell
 
-1. To create a resource group in the same Azure region as the **az104-03b-rg1** resource group you created in the previous lab, from the PowerShell session within Cloud Shell, run the following:
+1. To set a variable for your existing resource group and location from the PowerShell session within Cloud Shell, run the following:
 
    ```powershell
-   $location = (Get-AzResourceGroup -Name az104-03b-rg1).Location
+   #Note - ensure you change the following resource group name to match the RG in your lab environment
+   $location = (Get-AzResourceGroup -Name rg1-az104-student01).Location
 
-   $rgName = 'az104-03c-rg1'
-
-   New-AzResourceGroup -Name $rgName -Location $location
+   $rgName = 'rg1-az104-student01'  
    ```
-1. To retrieve properties of the newly created resource group, run the following:
+1. To retrieve properties of the existing resource group defined in the previous step, run the following:
 
    ```powershell
    Get-AzResourceGroup -Name $rgName
