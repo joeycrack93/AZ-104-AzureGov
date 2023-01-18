@@ -1,9 +1,3 @@
----
-lab:
-    title: '03d - Manage Azure resources by Using Azure CLI'
-    module: 'Administer Azure Resources'
----
-
 # Lab 03d - Manage Azure resources by Using Azure CLI
 # Student lab manual
 
@@ -18,7 +12,7 @@ Now that you explored the basic Azure administration capabilities associated wit
 In this lab, you will:
 
 + Task 1: Start a Bash session in Azure Cloud Shell
-+ Task 2: Create a resource group and an Azure managed disk by using Azure CLI
++ Task 2: Create an Azure managed disk by using Azure CLI
 + Task 3: Configure the managed disk by using Azure CLI
 
 ## Estimated timing: 20 minutes
@@ -35,9 +29,7 @@ In this task, you will open a Bash session in Cloud Shell.
 
 1. If prompted to select either **Bash** or **PowerShell**, select **Bash**. 
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and click **Create storage**. 
-
-1. If prompted, click **Create storage**, and wait until the Azure Cloud Shell pane is displayed. 
+    >**Note**: If you have Cloud Shell open from the previous lab (03c), you can change from PowerShell to Bash in the top-left corner drop-down menu in the Cloud Shell pane.
 
 1. Ensure **Bash** appears in the drop-down menu in the upper-left corner of the Cloud Shell pane.
 
