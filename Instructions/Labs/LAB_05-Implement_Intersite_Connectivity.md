@@ -1,9 +1,3 @@
----
-lab:
-    title: '05 - Implement Intersite Connectivity'
-    module: 'Administer Intersite Connectivity'
----
-
 # Lab 05 - Implement Intersite Connectivity
 # Student lab manual
 
@@ -33,28 +27,30 @@ In this lab, you will:
 
 In this task, you will deploy three virtual machines, each into a separate virtual network, with two of them in the same Azure region and the third one in another Azure region.
 
-1. Sign in to the [Azure portal](https://portal.azure.com).
+1. Sign in to the [Azure portal](https://portal.azure.us).
 
 1. In the Azure portal, open the **Azure Cloud Shell** by clicking on the icon in the top right of the Azure Portal.
 
 1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**.
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and click **Create storage**.
+    >**Note**: For the following step, and remaining labs, you will be deploying ARM templates and parameter JSONs like we did for labs 02b and 02c. To locate and download these files, navigate to [Allfiles/Labs](https://github.com/joeycrack93/AZ-104-AzureGov/tree/master/Allfiles/Labs) in the AZ-104-AzureGov Github repo.
+    >**To download full lab file directory**, you can use Github community tool [**download-directory**](https://download-directory.github.io/) and paste Allfiles/Labs URL "https://github.com/joeycrack93/AZ-104-AzureGov/tree/master/Allfiles/Labs" to download a .zip of lab file content.
 
 1. In the toolbar of the Cloud Shell pane, click the **Upload/Download files** icon, in the drop-down menu, click **Upload** and upload the files **\\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-template.json** and **\\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-parameters.json** into the Cloud Shell home directory.
 
+    >**Note**: The lab files may be in your local **Downloads** directory, or elsewhere depending on where you downloaded them to.
+
 1. Edit the **Parameters** file you just uploaded and change the password. If you need help editing the file in the Shell please ask your instructor for assistance. As a best practice, secrets, like passwords, should be more securely stored in the Key Vault. 
 
-1. From the Cloud Shell pane, run the following to create the resource group that will be hosting the lab environment. The first two virtual networks and a pair of virtual machines will be deployed in [Azure_region_1]. The third virtual network and the third virtual machine will be deployed in the same resource group but another [Azure_region_2]. (replace the [Azure_region_1] and [Azure_region_2] placeholder, including the square brackets, with the names of two different Azure regions where you intend to deploy these Azure virtual machines. An example is $location1 = 'eastus'. You can use Get-AzLocation to list all locations.):
+1. From the Cloud Shell pane, run the following to set the resource group that will be hosting the lab environment. The first two virtual networks and a pair of virtual machines will be deployed in [Azure_region_1]. The third virtual network and the third virtual machine will be deployed in the same resource group but another [Azure_region_2]. (replace the [Azure_region_1] and [Azure_region_2] placeholder, including the square brackets, with the names of two different Azure regions where you intend to deploy these Azure virtual machines. An example is $location1 = 'usgovvirginia'. You can use Get-AzLocation to list all locations.):
 
    ```powershell
-   $location1 = 'eastus'
+   $location1 = 'usgovvirginia'
 
-   $location2 = 'westus'
+   $location2 = 'usgovarizona'
 
-   $rgName = 'az104-05-rg1'
-
-   New-AzResourceGroup -Name $rgName -Location $location1
+   #Note - ensure you change the following resource group name to match the RG in your lab environment
+   $rgName = 'rg1-az104-student01'
    ```
 
    >**Note**: The regions used above were tested and known to work when this lab was last officially reviewed. If you would prefer to use different locations, or they no longer work, you will need to identify two different regions that Standard D2Sv3 virtual machines can be deployed into.
