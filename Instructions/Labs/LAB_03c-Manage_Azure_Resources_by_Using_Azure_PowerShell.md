@@ -1,9 +1,3 @@
----
-lab:
-    title: '03c - Manage Azure resources by Using Azure PowerShell'
-    module: 'Administer Azure Resources'
----
-
 # Lab 03c - Manage Azure resources by Using Azure PowerShell
 # Student lab manual
 
@@ -41,9 +35,10 @@ In this task, you will open a PowerShell session in Cloud Shell.
 
 1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and click **Create storage**. 
-
-1. If prompted, click **Create storage**, and wait until the Azure Cloud Shell pane is displayed. 
+   >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message.
+   >>If using a intructor-provided tenant,  select **Show advanced settings**. Subscription, region, and resource group should have values populated and left as-is. For **Storage account**, select **create new** and provide a **globally unique** name [Example: cshellstorageaz104kdnjzn]. For **File share**, select **create new** and provide a name. It does not have to be globally unique [Example: cloudshell].
+  
+   >>If using a personal Azure tenant, select the subscription you are using in this lab, and click **Create storage**. 
 
 1. Ensure **PowerShell** appears in the drop-down menu in the upper-left corner of the Cloud Shell pane.
 
