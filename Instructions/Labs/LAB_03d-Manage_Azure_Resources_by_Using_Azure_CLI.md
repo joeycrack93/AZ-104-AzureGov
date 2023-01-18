@@ -33,20 +33,19 @@ In this task, you will open a Bash session in Cloud Shell.
 
 1. Ensure **Bash** appears in the drop-down menu in the upper-left corner of the Cloud Shell pane.
 
-#### Task 2: Create a resource group and an Azure managed disk by using Azure CLI
+#### Task 2: Create an Azure managed disk by using Azure CLI
 
-In this task, you will create a resource group and an Azure managed disk by using Azure CLI session within Cloud Shell.
+In this task, you will create an Azure managed disk by using Azure CLI session within Cloud Shell.
 
-1. To create a resource group in the same Azure region as the **az104-03c-rg1** resource group you created in the previous lab, from the Bash session within Cloud Shell, run the following:
+1. To set a variable for your existing resource group and location from the Bash session within Cloud Shell, run the following:
 
    ```sh
-   LOCATION=$(az group show --name 'az104-03c-rg1' --query location --out tsv)
+   #Note - ensure you change the following resource group name to match the RG in your lab environment
+   LOCATION=$(az group show --name 'rg1-az104-student01' --query location --out tsv)
 
-   RGNAME='az104-03d-rg1'
-
-   az group create --name $RGNAME --location $LOCATION
+   RGNAME='rg1-az104-student01'  
    ```
-1. To retrieve properties of the newly created resource group, run the following:
+1. To retrieve properties of the existing resource group, run the following:
 
    ```sh
    az group show --name $RGNAME
@@ -62,13 +61,15 @@ In this task, you will create a resource group and an Azure managed disk by usin
    --sku 'Standard_LRS' \
    --size-gb 32
    ```
-    >**Note**: When using multi-line syntax, ensure that each line ends with back-slash (`\`) with no trailing spaces and that there are no leading spaces at the beginning of each line.
+    >**Note**: When using multi-line syntax, ensure that each line ends with back-slash (`\`) with no trailing spaces and that there are no leading spaces at the beginning of each line. 
 
 1. To retrieve properties of the newly created disk, run the following:
 
    ```sh
    az disk show --resource-group $RGNAME --name $DISKNAME
    ```
+
+    >**Note**: For an easier to read output, try adding '-o table' to the end of the previous command _[ex: az disk show --resource-group $RGNAME --name $DISKNAME -o table]_
 
 #### Task 3: Configure the managed disk by using Azure CLI
 
