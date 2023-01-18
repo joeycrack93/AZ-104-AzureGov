@@ -380,7 +380,7 @@ In this task, you will configure external DNS name resolution by using Azure pub
 
 1. In the Azure portal, In the Azure portal, search for and select **Resource groups**.
 
- > **Note**:  You can safely ignore the NetworkWatcherRG as you only have read permissions if using an instructor-provided account. That RG is needed for lab 06.
+> **Note**:  You can safely ignore the NetworkWatcherRG as you only have read permissions if using an instructor-provided account. That RG is needed for lab 06.
 
 3. Select your first resource group _[ex: rg1-az104-student01]_
 4. Select each resource, except your **Cloud Shell storage account**, by checking the box to the left of each resource name.
