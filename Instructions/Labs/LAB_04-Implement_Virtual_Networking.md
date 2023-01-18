@@ -91,9 +91,12 @@ In this task, you will deploy Azure virtual machines into different subnets of t
 
 1. In the toolbar of the Cloud Shell pane, click the **Upload/Download files** icon, in the drop-down menu, click **Upload** and upload the files **\\Allfiles\\Labs\\04\\az104-04-vms-loop-template.json** and **\\Allfiles\\Labs\\04\\az104-04-vms-loop-parameters.json** into the Cloud Shell home directory.
 
+    >**Note**: The lab files may be in your local **Downloads** directory, or elsewhere depending on where you downloaded them to.
     >**Note**: You might need to upload each file separately.
 
-1. Edit the Parameters file, and change the password. If you need help editing the file in the Shell please ask your instructor for assistance. As a best practice, secrets, like passwords, should be more securely stored in the Key Vault. 
+1. Edit the Parameters file, and change the password. To edit the Parameters file, select the curly brackets at the top of the Cloud Shell pane and navigate to the az104-04-vms-loop-parameters.json. If you need help editing the file in the Shell please ask your instructor for assistance. As a best practice, secrets, like passwords, should be more securely stored in the Key Vault. 
+
+    >**Note**: For more information on editing files in the Cloud Shell editor, visit [Using the Azure Cloud Shell editor](https://learn.microsoft.com/en-us/azure/cloud-shell/using-cloud-shell-editor).
 
 1. From the Cloud Shell pane, run the following to deploy two virtual machines by using the template and parameter files:
 
