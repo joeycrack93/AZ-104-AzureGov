@@ -125,5 +125,5 @@ In this task, you will be managing the configuration of the Azure managed disk b
 In this lab, you have:
 
 - Started a PowerShell session in Azure Cloud Shell
-- Created a resource group and an Azure managed disk by using Azure PowerShell
+- Created an Azure managed disk by using Azure PowerShell
 - Configured the managed disk by using Azure PowerShell
