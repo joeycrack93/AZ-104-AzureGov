@@ -1,9 +1,3 @@
----
-lab:
-    title: '06 - Implement Traffic Management'
-    module: 'Administer Network Traffic Management'
----
-
 # Lab 06 - Implement Traffic Management
 # Student lab manual
 
@@ -41,34 +35,32 @@ In this lab, you will:
 
 In this task, you will deploy four virtual machines into the same Azure region. The first two will reside in a hub virtual network, while each of the remaining two will reside in a separate spoke virtual network.
 
-1. Sign in to the [Azure portal](https://portal.azure.com).
+1. Sign in to the [Azure portal](https://portal.azure.us).
 
 1. In the Azure portal, open the **Azure Cloud Shell** by clicking on the icon in the top right of the Azure Portal.
 
 1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**.
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and click **Create storage**.
+    >**Note**: For the following step, and remaining labs, you will be deploying ARM templates and parameter JSONs like we did for labs 02b and 02c. To locate and download these files, navigate to [Allfiles/Labs](https://github.com/joeycrack93/AZ-104-AzureGov/tree/master/Allfiles/Labs) in the AZ-104-AzureGov Github repo.
+    >**To download full lab file directory**, you can use Github community tool [**download-directory**](https://download-directory.github.io/) and paste Allfiles/Labs URL "https://github.com/joeycrack93/AZ-104-AzureGov/tree/master/Allfiles/Labs" to download a .zip of lab file content.
 
 1. In the toolbar of the Cloud Shell pane, click the **Upload/Download files** icon, in the drop-down menu, click **Upload** and upload the files **\\Allfiles\\Labs\\06\\az104-06-vms-loop-template.json** and **\\Allfiles\\Labs\\06\\az104-06-vms-loop-parameters.json** into the Cloud Shell home directory.
 
+    >**Note**: The lab files may be in your local **Downloads** directory, or elsewhere depending on where you downloaded them to.
+
 1. Edit the **Parameters** file you just uploaded and change the password. If you need help editing the file in the Shell please ask your instructor for assistance. As a best practice, secrets, like passwords, should be more securely stored in the Key Vault. 
 
-1. From the Cloud Shell pane, run the following to create the first resource group that will be hosting the lab environment (replace the '[Azure_region]' placeholder with the name of an Azure region where you intend to deploy Azure virtual machines)(you can use the "(Get-AzLocation).Location" cmdlet to get the region list):
+1. From the Cloud Shell pane, run the following to set the first resource group that will be hosting the lab environment (_optionally_ replace the '[$location]' variable with the name of a different Azure region where you intend to deploy Azure virtual machines)(you can use the "(Get-AzLocation).Location" cmdlet to get the region list):
 
     ```powershell 
-    $location = '[Azure_region]'
+    $location = 'usgovvirginia'
     ```
     
     Now the resource group name:
     ```powershell
-    $rgName = 'az104-06-rg1'
+    #Note - ensure you change the following resource group name to match the RG in your lab environment
+    $rgName = 'rg1-az104-student01'
     ```
-    
-    And finally create the resource group in your desired location:
-    ```powershell
-    New-AzResourceGroup -Name $rgName -Location $location
-    ```
-
 
 1. From the Cloud Shell pane, run the following to create the three virtual networks and four Azure VMs into them by using the template and parameter files you uploaded:
 
@@ -91,7 +83,8 @@ In this task, you will deploy four virtual machines into the same Azure region. 
 1. From the Cloud Shell pane, run the following to install the Network Watcher extension on the Azure VMs deployed in the previous step:
 
    ```powershell
-   $rgName = 'az104-06-rg1'
+   #Note - ensure you change the following resource group name to match the RG in your lab environment
+   $rgName = 'rg1-az104-student01'
    $location = (Get-AzResourceGroup -ResourceGroupName $rgName).location
    $vmNames = (Get-AzVM -ResourceGroupName $rgName).Name
 
@@ -193,6 +186,8 @@ In this task, you will test transitivity of virtual network peering by using Net
 
 1. In the Azure portal, search for and select **Network Watcher**.
 
+    >**Note**: This section requires "read" permissions on the NetworkWatcherRG. If using an instructor-provided account, this permission should be already taken care of and assigned. If in the Network Watcher pane "Status" shows as "Disabled", notify your instructor.
+
 1. On the **Network Watcher** blade, expand the listing of Azure regions and verify the service is enabled in region you are using. 
 
 1. On the **Network Watcher** blade, navigate to the **Connection troubleshoot**.
@@ -202,7 +197,7 @@ In this task, you will test transitivity of virtual network peering by using Net
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az104-06-rg1** |
+    | Resource group | **rg1-az104-student01** |
     | Source type | **Virtual machine** |
     | Virtual machine | **az104-06-vm0** |
     | Destination | **Specify manually** |
@@ -273,6 +268,10 @@ In this task, you will configure and test routing between the two spoke virtual 
 1. In the Azure portal, navigate back to the **az104-06-vm0** Azure virtual machine blade and click **Overview**.
 
 1. On the **az104-06-vm0** blade, in the **Operations** section, click **Run command**, and, in the list of commands, click **RunPowerShellScript**.
+
+   > **Note**: If you don't see any commands available, ensure you have the following RBAC assignments at the subscription level.
+   > +Microsoft.Compute/locations/runCommands/read
+   > +Microsoft.Compute/virtualMachines/runCommand/action
 
 1. On the **Run Command Script** blade, type the following and click **Run** to install the Remote Access Windows Server role.
 
