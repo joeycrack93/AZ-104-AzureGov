@@ -304,14 +304,14 @@ In this task, you will configure and test routing between the two spoke virtual 
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az104-06-rg1** |
+    | Resource group | **rg1-az104-student01** |
     | Location | the name of the Azure region in which you created the virtual networks |
     | Name | **az104-06-rt23** |
-    | Propagate gateway routes | **No** |
+    | Propagate gateway routes | **Disabled** |
 
 1. Click **Review and Create**. Let validation occur, and click **Create** to submit your deployment.
 
-   > **Note**: Wait for the route table to be created. This should take about 3 minutes.
+   > **Note**: Wait for the route table to be created.
 
 1. Click **Go to resource**.
 
@@ -347,14 +347,14 @@ In this task, you will configure and test routing between the two spoke virtual 
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az104-06-rg1** |
+    | Resource group | **rg1-az104-student01** |
     | Region | the name of the Azure region in which you created the virtual networks |
     | Name | **az104-06-rt32** |
-    | Propagate gateway routes | **No** |
+    | Propagate gateway routes | **Disabled** |
 
 1. Click Review and Create. Let validation occur, and hit Create to submit your deployment.
 
-   > **Note**: Wait for the route table to be created. This should take about 3 minutes.
+   > **Note**: Wait for the route table to be created. 
 
 1. Click **Go to resource**.
 
@@ -415,7 +415,7 @@ In this task, you will implement an Azure Load Balancer in front of the two Azur
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az104-06-rg1** |
+    | Resource group | **rg1-az104-student01** |
     | Name | **az104-06-lb4** |
     | Region | name of the Azure region into which you deployed all other resources in this lab |
     | SKU  | **Standard** |
@@ -426,7 +426,7 @@ In this task, you will implement an Azure Load Balancer in front of the two Azur
      
     | Setting | Value |
     | --- | --- |
-    | Name | any unique name |
+    | Name | any unique name _[ex: frontEnd]_ |
 	| IP version | IPv4 |
 	| IP type | IP address |
     | Public IP address | **Create new** |
