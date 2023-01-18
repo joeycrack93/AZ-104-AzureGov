@@ -270,8 +270,8 @@ In this task, you will configure and test routing between the two spoke virtual 
 1. On the **az104-06-vm0** blade, in the **Operations** section, click **Run command**, and, in the list of commands, click **RunPowerShellScript**.
 
    > **Note**: If you don't see any commands available, ensure you have the following RBAC assignments at the subscription level.
-   > +Microsoft.Compute/locations/runCommands/read
-   > +Microsoft.Compute/virtualMachines/runCommand/action
+   > - Microsoft.Compute/locations/runCommands/read
+   > - Microsoft.Compute/virtualMachines/runCommand/action
 
 1. On the **Run Command Script** blade, type the following and click **Run** to install the Remote Access Windows Server role.
 
