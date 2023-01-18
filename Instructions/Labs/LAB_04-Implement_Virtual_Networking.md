@@ -87,6 +87,7 @@ In this task, you will deploy Azure virtual machines into different subnets of t
 1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**.
 
     >**Note**: For the following step, and remaining labs, you will be deploying ARM templates and parameter JSONs like we did for labs 02b and 02c. To locate and download these files, navigate to [Allfiles/Labs](https://github.com/joeycrack93/AZ-104-AzureGov/tree/master/Allfiles/Labs) in the AZ-104-AzureGov Github repo.
+    >**To download full lab file directory**, you can use Github community tool [**download-directory**](https://download-directory.github.io/) and paste Allfiles/Labs URL "https://github.com/joeycrack93/AZ-104-AzureGov/tree/master/Allfiles/Labs" to download a .zip of lab file content.
 
 1. In the toolbar of the Cloud Shell pane, click the **Upload/Download files** icon, in the drop-down menu, click **Upload** and upload the files **\\Allfiles\\Labs\\04\\az104-04-vms-loop-template.json** and **\\Allfiles\\Labs\\04\\az104-04-vms-loop-parameters.json** into the Cloud Shell home directory.
 
