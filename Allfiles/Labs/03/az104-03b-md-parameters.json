@@ -6,7 +6,7 @@
             "value": "az104-03a-disk1"
         },
         "location": {
-            "value": "eastus"
+            "value": "usgovvirginia"
         },
         "sku": {
             "value": "Standard_LRS"
