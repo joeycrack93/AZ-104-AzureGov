@@ -48,21 +48,18 @@ In this task, you will deploy an Azure virtual machine that you will use later i
 
 1. Edit the **Parameters** file you just uploaded and change the password. If you need help editing the file in the Shell please ask your instructor for assistance. As a best practice, secrets, like passwords, should be more securely stored in the Key Vault. 
 
-1. From the Cloud Shell pane, run the following to create the resource group that will be hosting the virtual machine (replace the '[Azure_region]' placeholder with the name of an Azure region where you intend to deploy the Azure virtual machine)
+1. From the Cloud Shell pane, run the following to set the resource group that will be hosting the virtual machine (_optionally_ replace the '[$location]' variable with the name of a different Azure region where you intend to deploy the Azure virtual machine)
 
     >**Note**: To list the names of Azure regions, run `(Get-AzLocation).Location`
     >**Note**: Each command below should be typed separately
 
     ```powershell
-    $location = '[Azure_region]'
+    $location = 'usgovvirginia'
     ```
   
     ```powershell
-     $rgName = 'az104-07-rg0'
-    ```
-
-    ```powershell
-    New-AzResourceGroup -Name $rgName -Location $location
+    #Note - ensure you change the following resource group name to match the RG in your lab environment
+    $rgName = 'rg1-az104-student01'
     ```
     
 1. From the Cloud Shell pane, run the following to deploy the virtual machine by using the uploaded template and parameter files:
@@ -79,7 +76,7 @@ In this task, you will deploy an Azure virtual machine that you will use later i
 
     >**Note**: If you got an error stating the VM size is not available please ask your instructor for assistance and try these steps.
     > 1. Click on the `{}` button in your CloudShell, select the **az104-07-vm-parameters.json** from the left hand side bar and take a note of the `vmSize` parameter value.
-    > 1. Check the location in which the 'az104-04-rg1' resource group is deployed. You can run `az group show -n az104-04-rg1 --query location` in your CloudShell to get it.
+    > 1. Check the location in which the 'az104-04-rg1' resource group is deployed. You can run `az group show -n rg1-az104-student01 --query location` in your CloudShell to get it.
     > 1. Run `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` in your CloudShell.
     > 1. Replace the value of `vmSize` parameter with one of the values returned by the command you just run.
     > 1. Now redeploy your templates by running the `New-AzResourceGroupDeployment` command again. You can press the up button a few times which would bring the last executed command.
@@ -97,8 +94,8 @@ In this task, you will create and configure an Azure Storage account.
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | the name of a **new** resource group **az104-07-rg1** |
-    | Storage account name | any globally unique name between 3 and 24 in length consisting of letters and digits |
+    | Resource group | the name of your existing resource group **rg1-az104-student01** |
+    | Storage account name | any **globally unique name** between 3 and 24 in length consisting of letters and digits _[ex:az104lab07jdie42]_ |
     | Region | the name of an Azure region where you can create an Azure Storage account  |
     | Performance | **Standard** |
     | Redundancy | **Geo-redundant storage (GRS)** |
@@ -109,13 +106,13 @@ In this task, you will create and configure an Azure Storage account.
 
 1. On the **Data protection** tab of the **Create storage account** blade, review the available options, accept the defaults, click **Review + Create**, wait for the validation process to complete and click **Create**.
 
-    >**Note**: Wait for the Storage account to be created. This should take about 2 minutes.
+    >**Note**: Wait for the Storage account to be created. This should take about 30 seconds.
 
 1. On the deployment blade, click **Go to resource** to display the Azure Storage account blade.
 
-1. On the Storage account blade, in the **Data management** section, click **Redundancy** and note the secondary location. 
+1. On the Storage account blade, in the **Data management** section, click **Geo-replication** and note the secondary location. 
 
-1. In the **Redundancy** drop-down list select **Locally redundant storage (LRS)** and save the change. Note, at this point, the Storage account has only the primary location.
+1. On the Storage account blade, in the **Settings** section, click **Configuration**. In the **Replication** drop-down menu, select **Locally redundant storage (LRS)** and save the change. Note, at this point, the Storage account has only the primary location. You can view this change by navigating back to **Geo-replication**.
 
 1. On the Storage account blade, in the **Settings** section, select **Configuration**. Set **Blob access tier (default)** to **Cool**, and save the change.
 
@@ -303,26 +300,21 @@ In this task, you will configure network access for Azure Storage.
 1. Close the Cloud Shell pane.
 
 #### Clean up resources
+ > **Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
 
->**Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+ > **Note**: Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a long time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
 
->**Note**:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a long time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. You might also try to delete the Resource Group where the resources reside. That is a quick Administrator shortcut. If you have concerns speak to your instructor.
+1. In the Azure portal, In the Azure portal, search for and select **Resource groups**.
 
-1. In the Azure portal, open the **PowerShell** session within the **Cloud Shell** pane.
+> **Note**:  You can safely ignore the NetworkWatcherRG as you only have read permissions if using an instructor-provided account. That RG is needed for lab 06.
 
-1. List all resource groups created throughout the labs of this module by running the following command:
+2. Select your first resource group _[ex: rg1-az104-student01]_
+3. Select each resource, except your **Cloud Shell storage account**, by checking the box to the left of each resource name.
+4. Click **Delete** in the top-right portion of the Azure Portal within the resource group pane.
+5. Confirm delete by typing **yes** and selecting **Delete**.
+6. Repeat the previous steps to delete resources in your remaining resource groups.
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-07*'
-   ```
-
-1. Delete all resource groups you created throughout the labs of this module by running the following command:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-07*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-    >**Note**: The command executes asynchronously (as determined by the -AsJob parameter), so while you will be able to run another PowerShell command immediately afterwards within the same PowerShell session, it will take a few minutes before the resource groups are actually removed.
+ > **Note**:  **Do not delete** any resource groups throughout the remainder of AZ 104 labs. If you delete any of your RGs in your instructor-provided Azure tenant, please notify your instructor.
 
 #### Review
 
