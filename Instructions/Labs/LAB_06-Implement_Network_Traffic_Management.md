@@ -452,7 +452,7 @@ In this task, you will implement an Azure Load Balancer in front of the two Azur
     | --- | --- |
     | Name | **az104-06-lb4-lbrule1** |
     | IP Version | **IPv4** |
-    | Frontend IP Address | **az104-06-pip4** |
+    | Frontend IP Address | Name from previous step 3 _[ex: frontEnd]_ |
     | Backend pool | **az104-06-lb4-be1** |    
 	| Protocol | **TCP** |
     | Port | **80** |
@@ -462,7 +462,6 @@ In this task, you will implement an Azure Load Balancer in front of the two Azur
     | Protocol | **TCP** |
     | Port | **80** |
     | Interval | **5** |
-    | Unhealthy threshold | **2** |
 	| Close the create health probe window | **OK** | 
     | Session persistence | **None** |
     | Idle timeout (minutes) | **4** |
@@ -510,7 +509,7 @@ In this task, you will implement an Azure Application Gateway in front of the tw
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az104-06-rg1** |
+    | Resource group | **rg1-az104-student01** |
     | Application gateway name | **az104-06-appgw5** |
     | Region | name of the Azure region into which you deployed all other resources in this lab |
     | Tier | **Standard V2** |
@@ -586,27 +585,21 @@ In this task, you will implement an Azure Application Gateway in front of the tw
     > **Note**: Targeting virtual machines on multiple virtual networks is not a common configuration, but it is meant to illustrate the point that Application Gateway is capable of targeting virtual machines on multiple virtual networks (as well as endpoints in other Azure regions or even outside of Azure), unlike Azure Load Balancer, which load balances across virtual machines in the same virtual network.
 
 #### Clean up resources
+ > **Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
 
->**Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+ > **Note**: Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a long time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
 
->**Note**:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+1. In the Azure portal, In the Azure portal, search for and select **Resource groups**.
 
-1. In the Azure portal, open the **PowerShell** session within the **Cloud Shell** pane.
+> **Note**:  You can safely ignore the NetworkWatcherRG as you only have read permissions if using an instructor-provided account. That RG is needed for lab 06.
 
-1. List all resource groups created throughout the labs of this module by running the following command:
+2. Select your first resource group _[ex: rg1-az104-student01]_
+3. Select each resource, except your **Cloud Shell storage account**, by checking the box to the left of each resource name.
+4. Click **Delete** in the top-right portion of the Azure Portal within the resource group pane.
+5. Confirm delete by typing **yes** and selecting **Delete**.
+6. Repeat the previous steps to delete resources in your remaining resource groups.
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-06*'
-   ```
-
-1. Delete all resource groups you created throughout the labs of this module by running the following command:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-06*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-    >**Note**: The command executes asynchronously (as determined by the -AsJob parameter), so while you will be able to run another PowerShell command immediately afterwards within the same PowerShell session, it will take a few minutes before the resource groups are actually removed.
-
+ > **Note**:  **Do not delete** any resource groups throughout the remainder of AZ 104 labs. If you delete any of your RGs in your instructor-provided Azure tenant, please notify your instructor.
 #### Review
 
 In this lab, you have:
