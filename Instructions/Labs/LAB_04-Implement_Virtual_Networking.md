@@ -1,9 +1,3 @@
----
-lab:
-    title: '04 - Implement Virtual Networking'
-    module: 'Administer Virtual Networking'
----
-
 # Lab 04 - Implement Virtual Networking
 
 # Student lab manual
@@ -39,7 +33,7 @@ In this lab, you will:
 
 In this task, you will create a virtual network with multiple subnets by using the Azure portal
 
-1. Sign in to the [Azure portal](https://portal.azure.com).
+1. Sign in to the [Azure portal](https://portal.azure.us).
 
 1. In the Azure portal, search for and select **Virtual networks**, and, on the **Virtual networks** blade, click **+ Create**.
 
@@ -48,7 +42,7 @@ In this task, you will create a virtual network with multiple subnets by using t
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you will be using in this lab |
-    | Resource Group | the name of a **new** resource group **az104-04-rg1** |
+    | Resource Group | the name of existing resource group _[ex: rg1-az104-student01]_ |
     | Name | **az104-04-vnet1** |
     | Region | the name of any Azure region available in the subscription you will use in this lab |
 
@@ -56,7 +50,7 @@ In this task, you will create a virtual network with multiple subnets by using t
 
     | Setting | Value |
     | --- | --- |
-    | IPv4 address space | **10.40.0.0/20** |
+    | IPv4 address space | Modify default value _10.0.0.0/16_ to **10.40.0.0/20** |
 
 1. Click **+ Add subnet** enter the following values then click **Add**
 
@@ -92,7 +86,7 @@ In this task, you will deploy Azure virtual machines into different subnets of t
 
 1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**.
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and click **Create storage**.
+    >**Note**: For the following step, and remaining labs, you will be deploying ARM templates and parameter JSONs like we did for labs 02b and 02c. To locate and download these files, navigate to [Allfiles/Labs](https://github.com/joeycrack93/AZ-104-AzureGov/tree/master/Allfiles/Labs) in the AZ-104-AzureGov Github repo.
 
 1. In the toolbar of the Cloud Shell pane, click the **Upload/Download files** icon, in the drop-down menu, click **Upload** and upload the files **\\Allfiles\\Labs\\04\\az104-04-vms-loop-template.json** and **\\Allfiles\\Labs\\04\\az104-04-vms-loop-parameters.json** into the Cloud Shell home directory.
 
