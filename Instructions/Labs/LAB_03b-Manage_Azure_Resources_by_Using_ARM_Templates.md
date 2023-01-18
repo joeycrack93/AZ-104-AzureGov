@@ -30,11 +30,11 @@ In this lab, you will:
 
 1. In the Azure portal, search for and select **Resource groups**. 
 
-1. In the list of resource groups, click **az104-03a-rg1**.
+1. In the list of resource groups, select your first resource group _[ex: rg1-az104-student01]_.
 
-1. On the **az104-03a-rg1** resource group blade, in the **Settings** section, click **Deployments**.
+1. On the **rg1-az104-student01** resource group blade, in the **Settings** section, click **Deployments**.
 
-1. On the **az104-03a-rg1 - Deployments** blade, click the first entry in the list of deployments.
+1. On the **rg1-az104-student01 - Deployments** blade, click the first entry in the list of deployments. It's name should be similar to _Microsoft.ManagedDisk-..._
 
 1. On the **Microsoft.ManagedDisk-*XXXXXXXXX* \| Overview** blade, click **Template**.
 
@@ -88,15 +88,17 @@ In this lab, you will:
     | Setting | Value |
     | --- |--- |
     | Subscription | *the name of the Azure subscription you are using in this lab* |
-    | Resource Group | the name of a **new** resource group **az104-03b-rg1** |
-    | Region | the name of any Azure region available in the subscription you are using in this lab |
+    | Resource Group | the name of existing second resource group _[ex: rg2-az104-student01]_ |
+    | Region | the name of any Azure region available in the subscription you are using in this lab _[ex: USGov Virginia]_ |
     | Disk Name | **az104-03b-disk1** |
-    | Location | the value of the location parameter you noted in the previous task |
+    | Location | the value of the location parameter you noted in the previous task _[ex: usgovvirginia]_ |
     | Sku | **Standard_LRS** |
     | Disk Size Gb | **32** |
     | Create Option | **empty** |
     | Disk Encryption Set Type | **EncryptionAtRestWithPlatformKey** |
+    | Data Access Auth Mode | **None** |
     | Network Access Policy | **AllowAll** |
+    | Public Network Access | **Enabled** |
 
 1. Select **Review + Create** and then select **Create**.
 
@@ -106,11 +108,11 @@ In this lab, you will:
 
 1. In the Azure portal, search for and select **Resource groups**. 
 
-1. In the list of resource groups, click **az104-03b-rg1**.
+1. In the list of resource groups, select the RG you deployed the disk to in the previous step _[ex: rg2-az104-student01]_.
 
-1. On the **az104-03b-rg1** resource group blade, in the **Settings** section, click **Deployments**.
+1. On the **rg2-az104-student01** resource group blade, in the **Settings** section, click **Deployments**.
 
-1. From the **az104-03b-rg1 - Deployments** blade, click the first entry in the list of deployments and review the content of the **Input** and **Template** blades.
+1. From the **rg2-az104-student01 - Deployments** blade, click the first entry in the list of deployments and review the content of the **Input** and **Template** blades. The template name should be similar to _Microsoft.Template-...
 
 #### Clean up resources
 
