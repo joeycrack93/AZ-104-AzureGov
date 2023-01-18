@@ -1,9 +1,3 @@
----
-lab:
-    title: '03b - Manage Azure resources by Using ARM Templates'
-    module: 'Administer Azure Resources'
----
-
 # Lab 03b - Manage Azure resources by Using ARM Templates
 # Student lab manual
 
@@ -32,7 +26,7 @@ In this lab, you will:
 
 #### Task 1: Review an ARM template for deployment of an Azure managed disk
 
-1. Sign in to the [**Azure portal**](http://portal.azure.com).
+1. Sign in to the [**Azure portal**](http://portal.azure.us).
 
 1. In the Azure portal, search for and select **Resource groups**. 
 
