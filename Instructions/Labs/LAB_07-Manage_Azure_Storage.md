@@ -1,9 +1,3 @@
----
-lab:
-    title: '07 - Manage Azure storage'
-    module: 'Administer Azure Storage'
----
-
 # Lab 07 - Manage Azure Storage
 # Student lab manual
 
@@ -39,15 +33,18 @@ In this lab, you will:
 
 In this task, you will deploy an Azure virtual machine that you will use later in this lab.
 
-1. Sign in to the [Azure portal](https://portal.azure.com).
+1. Sign in to the [Azure portal](https://portal.azure.us).
 
 1. In the Azure portal, open the **Azure Cloud Shell** by clicking on the icon in the top right of the Azure Portal.
 
 1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**.
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and click **Create storage**.
+    >**Note**: For the following step, and remaining labs, you will be deploying ARM templates and parameter JSONs like we did for labs 02b and 02c. To locate and download these files, navigate to [Allfiles/Labs](https://github.com/joeycrack93/AZ-104-AzureGov/tree/master/Allfiles/Labs) in the AZ-104-AzureGov Github repo.
+    >**To download full lab file directory**, you can use Github community tool [**download-directory**](https://download-directory.github.io/) and paste Allfiles/Labs URL "https://github.com/joeycrack93/AZ-104-AzureGov/tree/master/Allfiles/Labs" to download a .zip of lab file content.
 
 1. In the toolbar of the Cloud Shell pane, click the **Upload/Download files** icon, in the drop-down menu, click **Upload** and upload the files **\\Allfiles\\Labs\\07\\az104-07-vm-template.json** and **\\Allfiles\\Labs\\07\\az104-07-vm-parameters.json** into the Cloud Shell home directory.
+
+    >**Note**: The lab files may be in your local **Downloads** directory, or elsewhere depending on where you downloaded them to.
 
 1. Edit the **Parameters** file you just uploaded and change the password. If you need help editing the file in the Shell please ask your instructor for assistance. As a best practice, secrets, like passwords, should be more securely stored in the Key Vault. 
 
