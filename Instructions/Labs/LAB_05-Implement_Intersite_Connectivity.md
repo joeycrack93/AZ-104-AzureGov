@@ -114,7 +114,8 @@ In this task, you will configure local and global peering between the virtual ne
     >**Note**: In case you run into an issue with the Azure portal interface not displaying the virtual networks created in the previous task, you can configure peering by running the following PowerShell commands from Cloud Shell:
     
    ```powershell
-   $rgName = 'az104-05-rg1'
+   #Note - ensure you change the following resource group name to match the RG in your lab environment
+   $rgName = 'rg1-az104-student01'
 
    $vnet0 = Get-AzVirtualNetwork -Name 'az104-05-vnet0' -ResourceGroupName $rgname
 
@@ -149,7 +150,8 @@ In this task, you will configure local and global peering between the virtual ne
     >**Note**: In case you run into an issue with the Azure portal interface not displaying the virtual networks created in the previous task, you can configure peering by running the following PowerShell commands from Cloud Shell:
     
    ```powershell
-   $rgName = 'az104-05-rg1'
+   #Note - ensure you change the following resource group name to match the RG in your lab environment
+   $rgName = 'rg1-az104-student01'
 
    $vnet0 = Get-AzVirtualNetwork -Name 'az104-05-vnet0' -ResourceGroupName $rgname
 
@@ -186,7 +188,8 @@ In this task, you will configure local and global peering between the virtual ne
     >**Note**: In case you run into an issue with the Azure portal interface not displaying the virtual networks created in the previous task, you can configure peering by running the following PowerShell commands from Cloud Shell:
     
    ```powershell
-   $rgName = 'az104-05-rg1'
+   #Note - ensure you change the following resource group name to match the RG in your lab environment
+   $rgName = 'rg1-az104-student01'
 
    $vnet1 = Get-AzVirtualNetwork -Name 'az104-05-vnet1' -ResourceGroupName $rgname
 
@@ -257,25 +260,18 @@ In this task, you will test connectivity between virtual machines on the three v
 
 #### Clean up resources
 
->**Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+ > **Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
 
->**Note**:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+ > **Note**: Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a long time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
 
-1. In the Azure portal, open the **PowerShell** session within the **Cloud Shell** pane.
+1. In the Azure portal, In the Azure portal, search for and select **Resource groups**.
+2. Select your first resource group _[ex: rg1-az104-student01]_
+3. Select each resource, except your **Cloud Shell storage account**, by checking the box to the left of each resource name.
+4. Click **Delete** in the top-right portion of the Azure Portal within the resource group pane.
+5. Confirm delete by typing **yes** and selecting **Delete**.
+6. Repeat the previous steps to delete resources in your remaining resource groups.
 
-1. List all resource groups created throughout the labs of this module by running the following command:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-05*'
-   ```
-
-1. Delete all resource groups you created throughout the labs of this module by running the following command:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-05*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-    >**Note**: The command executes asynchronously (as determined by the -AsJob parameter), so while you will be able to run another PowerShell command immediately afterwards within the same PowerShell session, it will take a few minutes before the resource groups are actually removed.
+ > **Note**:  **Do not delete** any resource groups throughout the remainder of AZ 104 labs. If you delete any of your RGs in your instructor-provided Azure tenant, please notify your instructor.
 
 #### Review
 
