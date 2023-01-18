@@ -1,9 +1,3 @@
----
-lab:
-    title: '08 - Manage Virtual Machines'
-    module: 'Administer Virtual Machines'
----
-
 # Lab 08 - Manage Virtual Machines
 # Student lab manual
 
@@ -40,7 +34,7 @@ In this lab, you will:
 
 In this task, you will deploy Azure virtual machines into different availability zones by using the Azure portal and an Azure Resource Manager template.
 
-1. Sign in to the [Azure portal](http://portal.azure.com).
+1. Sign in to the [Azure portal](http://portal.azure.us).
 
 1. In the Azure portal, search for and select **Virtual machines** and, on the **Virtual machines** blade, click **+ Create**, click **+ Azure virtual machine**.
 
@@ -49,9 +43,9 @@ In this task, you will deploy Azure virtual machines into different availability
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you will be using in this lab |
-    | Resource group | the name of a new resource group **az104-08-rg01** |
+    | Resource group | the name of your existing resource group **rg1-az104-student01** |
     | Virtual machine name | **az104-08-vm0** |
-    | Region | select one of the regions that support availability zones and where you can provision Azure virtual machines |
+    | Region | select one of the regions that support availability zones and where you can provision Azure virtual machines _[ex: USGov Virginia]_ |
     | Availability options | **Availability zone** |
     | Availability zone | **Zone 1** |
     | Image | **Windows Server 2019 Datacenter - Gen1/Gen2** |
@@ -67,6 +61,7 @@ In this task, you will deploy Azure virtual machines into different availability
     | Setting | Value |
     | --- | --- |
     | OS disk type | **Premium SSD** |
+    | Encryption type | **(Default) Encryption at-rest with a platform-managed key** |
     | Enable Ultra Disk compatibility | **Unchecked** |
 
 1. Click **Next: Networking >** and, on the **Networking** tab of the **Create a virtual machine** blade, click **Create new** below the **Virtual network** textbox.
@@ -85,21 +80,21 @@ In this task, you will deploy Azure virtual machines into different availability
     | Setting | Value |
     | --- | --- |
     | Subnet | **subnet0** |
-    | Public IP | **default** |
+    | Public IP | **default** _[ex: (new) az104-08-vm0-ip]_ |
     | NIC network security group | **basic** |
     | Public inbound Ports | **None** |
     | Accelerated networking | **Off**
     | Place this virtual machine behind an existing load balancing solution? | **Unchecked** |
 
-1. Click **Next: Monitoring >** and, on the **Monitoring** tab of the **Create a virtual machine** blade, specify the following settings (leave others with their default values):
+1. Click **Next: Management >**. In the **Management** tab, review the available configurations and click **Next: Monitoring**.
+2. Click **Next: Monitoring >** and, on the **Monitoring** tab of the **Create a virtual machine** blade, specify the following settings (leave others with their default values):
 
     | Setting | Value |
     | --- | --- |
     | Boot diagnostics | **Enable with custom storage account** |
+    | Enable OS guest diagnostics | **leave unchecked** |  
     | Diagnostics storage account | accept the default value |
-    | Patch orchestration options | **Manual updates** |  
-
-    >**Note**: If necessary, select an existing storage account in the dropdown list or create a new storage account. Record the name of the storage account. You will use it in the next task.
+    
 
 1. Click **Next: Advanced >**, on the **Advanced** tab of the **Create a virtual machine** blade, review the available settings without modifying any of them, and click **Review + Create**.
 
@@ -115,11 +110,11 @@ In this task, you will deploy Azure virtual machines into different availability
 
     | Setting | Value |
     | --- | --- |
-    | Resource Group | **az104-08-rg01** |
+    | Resource Group | **rg1-az104-student01** |
     | Network Interface Name | **az104-08-vm1-nic1** |
     | Public IP Address Name | **az104-08-vm1-ip** |
     | Virtual Machine Name, Virtual Machine Name1, Virtual Machine Computer Name   | **az104-08-vm1** |
-    | Virtual Machine RG | **az104-08-rg01** |    
+    | Virtual Machine RG | **rg1-az104-student01** |    
     | Admin Username | **Student** |
     | Admin Password | **Provide a secure password**  |
     | Enable Hotpatching | **false** |
@@ -166,7 +161,7 @@ In this task, you will install Windows Server Web Server role on the two Azure v
 
 1. In the Azure portal, search for and select **Virtual machines** and, on the **Virtual machines** blade, click **az104-08-vm1**.
 
-1. On the **az104-08-vm1** blade, in the **Automation** section, click **Export template**.
+1. On the **az104-08-vm1** blade, in the **Settings** section, click **Export template**.
 
 1. On the **az104-08-vm1 - Export template** blade, click **Deploy**.
 
