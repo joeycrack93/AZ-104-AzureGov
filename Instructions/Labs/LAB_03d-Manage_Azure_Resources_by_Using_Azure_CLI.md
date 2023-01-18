@@ -109,7 +109,10 @@ In this task, you will managing configuration of the Azure managed disk by using
 2. Select your first resource group _[ex: rg1-az104-student01]_
 3. Select each resource, except your **Cloud Shell storage account**, by checking the box to the left of each resource name.
 4. Click **Delete** in the top-right portion of the Azure Portal within the resource group pane.
-5. Repeat the previous steps to delete resources in your remaining resource groups.
+5. Confirm delete by typing **yes** and selecting **Delete**.
+6. Repeat the previous steps to delete resources in your remaining resource groups.
+
+ > **Note**:  **Do not delete** any resource groups throughout the remainder of AZ 104 labs. If you delete any of your RGs in your instructor-provided Azure tenant, please notify your instructor.
 
 #### Review
 
