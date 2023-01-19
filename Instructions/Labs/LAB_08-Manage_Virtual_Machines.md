@@ -330,7 +330,7 @@ In this task you will scale compute for Azure virtual machines by changing their
     > **Note**: Wait for the confirmation that the commands completed successfully.
 
 ### **Note**: If using an instructor-provided account and Gov tenant, you will be unable to complete Task 4. Please proceed to Task 5.
-    > In Task 4, instructor-provided accounts do not have permission to register resource providers on the Training Subscription. Further, they should already be registered ahead of time by the instructors. 
+   >**Note**: In Task 4, instructor-provided accounts do not have permission to register resource providers on the Training Subscription. Further, they should already be registered ahead of time by the instructors. 
 
 #### Task 4: Register the Microsoft.Insights and Microsoft.AlertsManagement resource providers
 
