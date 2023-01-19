@@ -329,7 +329,7 @@ In this task you will scale compute for Azure virtual machines by changing their
 
     > **Note**: Wait for the confirmation that the commands completed successfully.
 
-### **Note**: If using an instructor-provided account and Gov tenant, you will be unable to complete Task 4. Please proceed to Task 5.
+### If using an instructor-provided account and Gov tenant, you will be unable to complete Task 4. Please proceed to Task 5.
    >**Note**: In Task 4, instructor-provided accounts do not have permission to register resource providers on the Training Subscription. Further, they should already be registered ahead of time by the instructors. 
 
 #### Task 4: Register the Microsoft.Insights and Microsoft.AlertsManagement resource providers
@@ -359,7 +359,7 @@ In this task, you will deploy Azure virtual machine scale set across availabilit
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | the name of a new resource group **az104-08-rg02** |
+    | Resource group | the name of your existing resource group **rg1-az104-student01** |
     | Virtual machine scale set name | **az10408vmss0** |
     | Region | select one of the regions that support availability zones and where you can provision Azure virtual machines different from the one you used to deploy virtual machines earlier in this lab |
     | Availability zone | **Zones 1, 2, 3** |
@@ -432,7 +432,7 @@ In this task, you will deploy Azure virtual machine scale set across availabilit
     | Setting | Value |
     | --- | --- |
     | Boot diagnostics | **Enable with custom storage account** |
-    | Diagnostics storage account | accept the default value |
+    | Diagnostics storage account | select the storage account you created earlier in Exercise 1 /_*not your Cloud Shell Storage Account_ |
 
     >**Note**: You will need the name of this storage account in the next task.
 
