@@ -432,7 +432,7 @@ In this task, you will deploy Azure virtual machine scale set across availabilit
     | Setting | Value |
     | --- | --- |
     | Boot diagnostics | **Enable with custom storage account** |
-    | Diagnostics storage account | select the storage account you created earlier in Exercise 1 /_*not your Cloud Shell Storage Account_ |
+    | Diagnostics storage account | select the storage account you created earlier in Exercise 1. _*not your Cloud Shell Storage Account_ |
 
     >**Note**: You will need the name of this storage account in the next task.
 
