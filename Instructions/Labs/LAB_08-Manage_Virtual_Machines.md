@@ -93,7 +93,11 @@ In this task, you will deploy Azure virtual machines into different availability
     | --- | --- |
     | Boot diagnostics | **Enable with custom storage account** |
     | Enable OS guest diagnostics | **leave unchecked** |  
-    | Diagnostics storage account | accept the default value |
+    | Diagnostics storage account | **create new** | 
+    | Name | Provide a **globally unique** name _[ex: az104lab08storage374]_ |
+    | Account kind | **StorageV2** |
+    | Performance | **Standard** |
+    | Replication | **Locally-redundant storage** |
     
 
 1. Click **Next: Advanced >**, on the **Advanced** tab of the **Create a virtual machine** blade, review the available settings without modifying any of them, and click **Review + Create**.
@@ -117,7 +121,6 @@ In this task, you will deploy Azure virtual machines into different availability
     | Virtual Machine RG | **rg1-az104-student01** |    
     | Admin Username | **Student** |
     | Admin Password | **Provide a secure password**  |
-    | Enable Hotpatching | **false** |
     | Zone | **2** |
 
     >**Note**: You need to modify parameters corresponding to the properties of the distinct resources you are deploying by using the template, including the virtual machine and its network interface.
@@ -149,7 +152,7 @@ In this task, you will install Windows Server Web Server role on the two Azure v
 
 1. In the Azure portal, search for and select **Virtual machines** and, on the **Virtual machines** blade, click **az104-08-vm0**.
 
-1. On the **az104-08-vm0** virtual machine blade, in the **Settings** section, click **Extensions + applications**, and the click **+ Add**.
+1. On the **az104-08-vm0** virtual machine blade, in the **Settings** section, click **Extensions + applications**, and then click **+ Add**.
 
 1. On the **Install an Extension** blade, click **Custom Script Extension** and then click **Next**.
 
@@ -219,7 +222,7 @@ In this task you will scale compute for Azure virtual machines by changing their
 
 1. In the Azure portal, search for and select **Virtual machines** and, on the **Virtual machines** blade, click **az104-08-vm0**.
 
-1. On the **az104-08-vm0** virtual machine blade, click **Size** and set the virtual machine size to **Standard DS1_v2** and click **Resize**
+1. On the **az104-08-vm0** virtual machine blade, under **Settings** click **Size** and set the virtual machine size to **Standard DS1_v2** and click **Resize**
 
     >**Note**: Choose another size if **Standard DS1_v2** is not available.
 
@@ -263,7 +266,7 @@ In this task you will scale compute for Azure virtual machines by changing their
 
 1. In the Azure portal, search for and select **Virtual machines** and, on the **Virtual machines** blade, click **az104-08-vm1**.
 
-1. On the **az104-08-vm1** blade, in the **Automation** section, click **Export template**.
+1. On the **az104-08-vm1** blade, in the **Settings** section, click **Export template**.
 
 1. On the **az104-08-vm1 - Export template** blade, click **Deploy**.
 
@@ -325,6 +328,9 @@ In this task you will scale compute for Azure virtual machines by changing their
    ```
 
     > **Note**: Wait for the confirmation that the commands completed successfully.
+
+### **Note**: If using an instructor-provided account and Gov tenant, you will be unable to complete Task 4. Please proceed to Task 5.
+    > In Task 4, instructor-provided accounts do not have permission to register resource providers on the Training Subscription. Further, they should already be registered ahead of time by the instructors. 
 
 #### Task 4: Register the Microsoft.Insights and Microsoft.AlertsManagement resource providers
 
