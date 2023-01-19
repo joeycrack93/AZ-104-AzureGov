@@ -1,9 +1,3 @@
----
-lab:
-    title: '09a - Implement Web Apps'
-    module: 'Administer Serverless Computing'
----
-
 # Lab 09a - Implement Web Apps
 # Student lab manual
 
@@ -38,7 +32,7 @@ In this lab, you will:
 
 In this task, you will create an Azure web app.
 
-1. Sign in to the [**Azure portal**](http://portal.azure.com).
+1. Sign in to the [**Azure portal**](http://portal.azure.us).
 
 1. In the Azure portal, search for and select **App services**, and, on the **App Services** blade, click **+ Create**.
 
