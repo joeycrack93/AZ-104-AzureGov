@@ -456,7 +456,7 @@ In this task, you will deploy Azure virtual machine scale set across availabilit
 
 In this task, you will install Windows Server Web Server role on the instances of the Azure virtual machine scale set you deployed in the previous task by using the Custom Script virtual machine extension.
 
-1. In the Azure portal, search for and select **Storage accounts** and, on the **Storage accounts** blade, click the entry representing the diagnostics storage account you created in the previous task.
+1. In the Azure portal, search for and select **Storage accounts** and, on the **Storage accounts** blade, click the entry representing the diagnostics storage account you referenced in the previous task.
 
 1. On the storage account blade, in the **Data Storage** section, click **Containers** and then click **+ Container**.
 
@@ -464,20 +464,20 @@ In this task, you will install Windows Server Web Server role on the instances o
 
     | Setting | Value |
     | --- | --- |
-    | Name | **scripts** |
+    | Name | **scripts2** |
     | Public access level | **Private (no anonymous access**) |
 
-1. Back on the storage account blade displaying the list of containers, click **scripts**.
+1. Back on the storage account blade displaying the list of containers, click **scripts2**.
 
-1. On the **scripts** blade, click **Upload**.
+1. On the **scripts2** blade, click **Upload**.
 
 1. On the **Upload blob** blade, click the folder icon, in the **Open** dialog box, navigate to the **\\Allfiles\\Labs\\08** folder, select **az104-08-install_IIS.ps1**, click **Open**, and back on the **Upload blob** blade, click **Upload**.
 
 1. In the Azure portal, navigate back to the **Virtual machine scale sets** blade and click **az10408vmss0**.
 
-1. On the **az10408vmss0** blade, in the **Settings** section, click **Extensions**, and the click **+ Add**.
+1. On the **az10408vmss0** blade, in the **Settings** section, click **Extensions + applications**, and then click **+ Add**.
 
-1. On the **New resource** blade, click **Custom Script Extension** and then click **Next**.
+1. On the **Install an Extension** page, click **Custom Script Extension** and then click **Next**.
 
 1. From the **Install extension** blade, **Browse** to and **Select** the **az104-08-install_IIS.ps1** script that was uploaded to the **scripts** container in the storage account earlier in this task, and then click **Create**.
 
@@ -517,7 +517,7 @@ In this task, you will change the size of virtual machine scale set instances, c
     | --- |--- |
     | Scale mode | **Scale based on a metric** |
 
-1. Click the **+ Add a rule** link and, on the **Scale rule** blade, specify the following settings (leave others with their default values):
+1. Click the **+ Add a rule** link _[it's the small link in the yellow highlighted area]_ and, on the **Scale rule** blade, specify the following settings (leave others with their default values):
 
     | Setting | Value |
     | --- |--- |
@@ -552,7 +552,7 @@ In this task, you will change the size of virtual machine scale set instances, c
 1. From the Cloud Shell pane, run the following to identify the public IP address of the load balancer in front of the Azure virtual machine scale set **az10408vmss0**.
 
    ```powershell
-   $rgName = 'az104-08-rg02'
+   $rgName = 'rg1-az104-student01'
 
    $lbpipName = 'az10408vmss0-ip'
 
@@ -590,6 +590,7 @@ In this task, you will change the size of virtual machine scale set instances, c
     >**Note**: Wait for uninstallation to complete.
 
 1. In the Azure portal, open the **Azure Cloud Shell** by clicking on the icon in the top right of the Azure Portal.
+    >**Note**: If your previous script in Cloud Shell is still running, you can terminate it my pressing the **ctrl+c** keys.
 
 1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**.
 
@@ -608,6 +609,9 @@ In this task, you will change the size of virtual machine scale set instances, c
 1. From the Cloud Shell pane, run the following to excecute the script and configure disks of Azure virtual machine scale set:
 
    ```powershell
+   #note - ensure you change $rgname value to match the RG in your environment
+   $rgName = 'rg1-az104-student01'
+   $vmssName = 'az10408vmss0'
    ./az104-08-configure_VMSS_disks.ps1
    ```
 
@@ -617,30 +621,21 @@ In this task, you will change the size of virtual machine scale set instances, c
 
 #### Clean up resources
 
->**Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+ > **Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
 
->**Note**:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
-1. In the Azure portal, open the **PowerShell** session within the **Cloud Shell** pane.
+ > **Note**: Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a long time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
 
-1. Remove az104-08-configure_VMSS_disks.ps1 by running the following command:
+1. In the Azure portal, In the Azure portal, search for and select **Resource groups**.
 
-   ```powershell
-   rm ~\az104-08*
-   ```
+> **Note**:  You can safely ignore the NetworkWatcherRG as you only have read permissions if using an instructor-provided account. That RG is needed for lab 06.
 
-1. List all resource groups created throughout the labs of this module by running the following command:
+2. Select your first resource group _[ex: rg1-az104-student01]_
+3. Select each resource, except your **Cloud Shell storage account**, by checking the box to the left of each resource name.
+4. Click **Delete** in the top-right portion of the Azure Portal within the resource group pane.
+5. Confirm delete by typing **yes** and selecting **Delete**.
+6. Repeat the previous steps to delete resources in your remaining resource groups.
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-08*'
-   ```
-
-1. Delete all resource groups you created throughout the labs of this module by running the following command:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-08*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-    >**Note**: The command executes asynchronously (as determined by the -AsJob parameter), so while you will be able to run another PowerShell command immediately afterwards within the same PowerShell session, it will take a few minutes before the resource groups are actually removed.
+ > **Note**:  **Do not delete** any resource groups throughout the remainder of AZ 104 labs. If you delete any of your RGs in your instructor-provided Azure tenant, please notify your instructor.
 
 #### Review
 
