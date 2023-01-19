@@ -41,12 +41,12 @@ In this task, you will create an Azure web app.
     | Setting | Value |
     | --- | ---|
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | the name of a new resource group **az104-09a-rg1** |
+    | Resource group | the name of your existing resource group **rg1-az104-student01** |
     | Web app name | any globally unique name |
     | Publish | **Code** |
     | Runtime stack | **PHP 8.0** |
     | Operating system | **Linux** |
-    | Region | the name of an Azure region where you can provision Azure web apps |
+    | Region | USGov Virginia |
     | App service plan | accept the default configuration |
 
 1. Click **Review + create**. On the **Review + create** tab of the **Create Web App** blade, ensure that the validation passed and click **Create**.
@@ -208,7 +208,8 @@ In this task, you will configure and test autoscaling of Azure web app.
 1. From the Cloud Shell pane, run the following to identify the URL of the Azure web app.
 
    ```powershell
-   $rgName = 'az104-09a-rg1'
+   #note - ensure the value for $rgName matches the resource group in your environment.
+   $rgName = 'rg1-az104-student01'
 
    $webapp = Get-AzWebApp -ResourceGroupName $rgName
    ```
@@ -233,25 +234,21 @@ In this task, you will configure and test autoscaling of Azure web app.
 
 #### Clean up resources
 
->**Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+ > **Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
 
->**Note**:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a long time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+ > **Note**: Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a long time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
 
-1. In the Azure portal, open the **PowerShell** session within the **Cloud Shell** pane.
+1. In the Azure portal, In the Azure portal, search for and select **Resource groups**.
 
-1. List all resource groups created throughout the labs of this module by running the following command:
+> **Note**:  You can safely ignore the NetworkWatcherRG as you only have read permissions if using an instructor-provided account. That RG is needed for lab 06.
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-09a*'
-   ```
+2. Select your first resource group _[ex: rg1-az104-student01]_
+3. Select each resource, except your **Cloud Shell storage account**, by checking the box to the left of each resource name.
+4. Click **Delete** in the top-right portion of the Azure Portal within the resource group pane.
+5. Confirm delete by typing **yes** and selecting **Delete**.
+6. Repeat the previous steps to delete resources in your remaining resource groups.
 
-1. Delete all resource groups you created throughout the labs of this module by running the following command:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-09a*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-    >**Note**: The command executes asynchronously (as determined by the -AsJob parameter), so while you will be able to run another PowerShell command immediately afterwards within the same PowerShell session, it will take a few minutes before the resource groups are actually removed.
+ > **Note**:  **Do not delete** any resource groups throughout the remainder of AZ 104 labs. If you delete any of your RGs in your instructor-provided Azure tenant, please notify your instructor.
 
 #### Review
 
