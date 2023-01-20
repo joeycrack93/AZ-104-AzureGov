@@ -1,9 +1,3 @@
----
-lab:
-    title: '09b - Implement Azure Container Instances'
-    module: 'Administer Serverless Computing'
----
-
 # Lab 09b - Implement Azure Container Instances
 # Student lab manual
 
