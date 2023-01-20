@@ -1,9 +1,3 @@
----
-lab:
-    title: '09c - Implement Azure Kubernetes Service'
-    module: 'Administer Serverless Computing'
----
-
 # Lab 09c - Implement Azure Kubernetes Service
 # Student lab manual
 
@@ -34,9 +28,11 @@ In this lab, you will:
 
 #### Task 1: Register the Microsoft.Kubernetes and Microsoft.KubernetesConfiguration resource providers.
 
+   >**Note**: If using an instructor-provided account, the Microsoft.Kubernetes and Microsoft.KubernetesConfiguration resource providers should already be registered. Further, your provided account won't have permissions to register resource providers. Please proceed to Task 2.
+
 In this task, you will register resource providers necessary to deploy an Azure Kubernetes Services cluster.
 
-1. Sign in to the [Azure portal](https://portal.azure.com).
+1. Sign in to the [Azure portal](https://portal.azure.us).
 
 1. In the Azure portal, open the **Azure Cloud Shell** by clicking on the icon in the top right of the Azure Portal.
 
@@ -65,13 +61,13 @@ In this task, you will deploy an Azure Kubernetes Services cluster by using the 
     | Setting | Value |
     | ---- | ---- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | the name of a new resource group **az104-09c-rg1** |
+    | Resource group | the name of your existing resource group **rg1-az104-student01** |
     | Cluster preset configuration | **Dev/Test ($)** |
     | Kubernetes cluster name | **az104-9c-aks1** |
-    | Region | the name of a region where you can provision a Kubernetes cluster |
+    | Region | USGov Virginia |
     | Availability zones | **None** (uncheck all boxes) |
     | Kubernetes version | accept the default |
-    | API server availability | accept the default |
+    | Automatic upgrade | accept the default |
     | Node size | accept the default |
     | Scale method | **Manual** |
     | Node count | **1** |
@@ -93,20 +89,22 @@ In this task, you will deploy an Azure Kubernetes Services cluster by using the 
 
     | Setting | Value |
     | ---- | ---- |
-    | Network configuration | **kubenet** |
-    | DNS name prefix | any valid, globally unique DNS prefix|
+    | Network configuration | **Azure CNI** (default) |
+    | DNS name prefix | any valid, globally unique DNS prefix (use default) |
 
 1. Click **Next: Integrations >**, on the **Integrations** tab of the **Create Kubernetes cluster** blade, set **Container monitoring** to **Disabled**, click **Review + create**, ensure that the validation passed and click **Create**.
 
     >**Note**: In production scenarios, you would want to enable monitoring. Monitoring is disabled in this case since it is not covered in the lab.
 
-    >**Note**: Wait for the deployment to complete. This should take about 10 minutes.
+    >**Note**: Wait for the deployment to complete. This should take a few minutes.
 
 #### Task 3: Deploy pods into the Azure Kubernetes Service cluster
 
 In this task, you will deploy a pod into the Azure Kubernetes Service cluster.
 
 1. On the deployment blade, click the **Go to resource** link.
+
+    >**Note**: If you are using an instructor-provided account, you may see a warning on the top portion of the AKS pane. You can safely ignore this message and proceed with the following steps.
 
 1. On the **az104-9c-aks1** Kubernetes service blade, in the **Settings** section, click **Node pools**.
 
@@ -119,7 +117,8 @@ In this task, you will deploy a pod into the Azure Kubernetes Service cluster.
 1. From the Cloud Shell pane, run the following to retrieve the credentials to access the AKS cluster:
 
     ```sh
-    RESOURCE_GROUP='az104-09c-rg1'
+    #Note - ensure you change your resource group name to match your environment.
+    RESOURCE_GROUP='rg1-az104-student01'
 
     AKS_CLUSTER='az104-9c-aks1'
 
@@ -191,14 +190,15 @@ In this task, you will scale horizontally the number of pods and then number of 
 1. From the **Cloud Shell** pane, run the following to scale out the cluster by increasing the number of nodes to 2:
 
     ```sh
-    RESOURCE_GROUP='az104-09c-rg1'
+    #Note - ensure you change your resource group name to match your environment.
+    RESOURCE_GROUP='rg1-az104-student01'
 
     AKS_CLUSTER='az104-9c-aks1'
 
     az aks scale --resource-group $RESOURCE_GROUP --name $AKS_CLUSTER --node-count 2
     ```
 
-    > **Note**: Wait for the provisioning of the additional node to complete. This might take about 3 minutes. If it fails, rerun the `az aks scale` command.
+    > **Note**: Wait for the provisioning of the additional node to complete. This might take a few minutes. If it fails, rerun the `az aks scale` command.
 
 1. From the **Cloud Shell** pane, run the following to verify the outcome of scaling the cluster:
 
@@ -240,25 +240,21 @@ In this task, you will scale horizontally the number of pods and then number of 
 
 #### Clean up resources
 
->**Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+ > **Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
 
->**Note**:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a long time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+ > **Note**: Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a long time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
 
-1. In the Azure portal, open the **Bash** shell session within the **Cloud Shell** pane.
+1. In the Azure portal, In the Azure portal, search for and select **Resource groups**.
 
-1. List all resource groups created throughout the labs of this module by running the following command:
+> **Note**:  You can safely ignore the NetworkWatcherRG as you only have read permissions if using an instructor-provided account. That RG is needed for lab 06.
 
-   ```sh
-   az group list --query "[?starts_with(name,'az104-09c')].name" --output tsv
-   ```
+2. Select your first resource group _[ex: rg1-az104-student01]_
+3. Select each resource, except your **Cloud Shell storage account**, by checking the box to the left of each resource name.
+4. Click **Delete** in the top-right portion of the Azure Portal within the resource group pane.
+5. Confirm delete by typing **yes** and selecting **Delete**.
+6. Repeat the previous steps to delete resources in your remaining resource groups.
 
-1. Delete all resource groups you created throughout the labs of this module by running the following command:
-
-   ```sh
-   az group list --query "[?starts_with(name,'az104-09c')].[name]" --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-   ```
-
-    >**Note**: The command executes asynchronously (as determined by the --nowait parameter), so while you will be able to run another Azure CLI command immediately afterwards within the same Bash session, it will take a few minutes before the resource groups are actually removed.
+ > **Note**:  **Do not delete** any resource groups throughout the remainder of AZ 104 labs. If you delete any of your RGs in your instructor-provided Azure tenant, please notify your instructor.
 
 #### Review
 
