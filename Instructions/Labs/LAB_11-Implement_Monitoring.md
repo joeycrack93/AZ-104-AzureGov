@@ -92,9 +92,9 @@ In this task, you will create and configure an Azure Log Analytics workspace and
     | Settings | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | the name of a new resource group **az104-11-rg1** |
-    | Log Analytics Workspace | any unique name |
-    | Region | the name of the Azure region into which you deployed the virtual machine in the previous task |
+    | Resource group | the name of your existing resource group **rg1-az104-student01** |
+    | Log Analytics Workspace | any unique name _[ex: loganalyticsaz104student01bkf]_ |
+    | Region | **USGov Virginia** |
 
     >**Note**: Make sure that you specify the same region into which you deployed virtual machines in the previous task.
 
@@ -106,10 +106,10 @@ In this task, you will create and configure an Azure Log Analytics workspace and
 
     | Settings | Value |
     | --- | --- |
-    | Automation account name | any unique name |
+    | Automation account name | any unique name _[ex: aaccountaz104student01bkf]_ |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az104-11-rg1** |
-    | Region | the name of the Azure region determined based on [Workspace mappings documentation](https://docs.microsoft.com/en-us/azure/automation/how-to/region-mappings) |
+    | Resource group | **rg1-az104-student01** |
+    | Region | **USGov Virginia** |
 
     >**Note**: Make sure that you specify the Azure region based on the [Workspace mappings documentation](https://docs.microsoft.com/en-us/azure/automation/how-to/region-mappings)
 
@@ -165,7 +165,7 @@ In this task, you will configure Azure virtual machine diagnostic settings.
 
     >**Note**: By default, log collection includes critical, error, and warning entries from the Application Log and System log, as well as Audit failure entries from the Security log. Here as well you can switch to the **Custom** view for more detailed configuration settings.
 
-1. On the **az104-11-vm0** blade, in the **Monitoring** section, click **Log Analytics Agent** and then click **Enable**.
+1. On the **az104-11-vm0** blade, in the **Monitoring** section, click **Logs** and then click **Enable**.
 
 1. On the **az104-11-vm0 - Logs** blade, ensure that the Log Analytics workspace you created earlier in this lab is selected in the **Choose a Log Analytics Workspace** drop-down list and click **Enable**.
 
@@ -219,7 +219,7 @@ In this task, you will configure Azure virtual machine diagnostic settings.
     | Settings | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az104-11-rg1** |
+    | Resource group | **rg1-az104-student01** |
     | Action group name | **az104-11-ag1** |
     | Display name | **az104-11-ag1** |
 
@@ -311,25 +311,21 @@ In this task, you will configure Azure virtual machine diagnostic settings.
 
 #### Clean up resources
 
->**Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+ > **Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
 
->**Note**:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+ > **Note**: Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a long time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
 
-1. In the Azure portal, open the **PowerShell** session within the **Cloud Shell** pane.
+1. In the Azure portal, In the Azure portal, search for and select **Resource groups**.
 
-1. List all resource groups created throughout the labs of this module by running the following command:
+> **Note**:  You can safely ignore the NetworkWatcherRG as you only have read permissions if using an instructor-provided account. That RG is needed for lab 06.
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-11*'
-   ```
+2. Select your first resource group _[ex: rg1-az104-student01]_
+3. Select each resource, except your **Cloud Shell storage account**, by checking the box to the left of each resource name.
+4. Click **Delete** in the top-right portion of the Azure Portal within the resource group pane.
+5. Confirm delete by typing **yes** and selecting **Delete**.
+6. Repeat the previous steps to delete resources in your remaining resource groups.
 
-1. Delete all resource groups you created throughout the labs of this module by running the following command:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-11*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-    >**Note**: The command executes asynchronously (as determined by the -AsJob parameter), so while you will be able to run another PowerShell command immediately afterwards within the same PowerShell session, it will take a few minutes before the resource groups are actually removed.
+ > **Note**:  **Do not delete** any resource groups throughout the remainder of AZ 104 labs. If you delete any of your RGs in your instructor-provided Azure tenant, please notify your instructor.
 
 #### Review
 
@@ -341,3 +337,8 @@ In this lab, you have:
 + Configured Azure virtual machine diagnostic settings
 + Reviewed Azure Monitor functionality
 + Reviewed Azure Log Analytics functionality
+
+# Completion!!
+
+Congratulations! This concludes all labs for AZ-104 training in Azure Government. If you have made it this far, it's been through no shortage of effort on your part - bravo! Now go and schedule your AZ-104 certification exam!
+
