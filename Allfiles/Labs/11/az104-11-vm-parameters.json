@@ -6,7 +6,7 @@
             "value": "Student"
         },
         "adminPassword": {
-            "value": "Pa55w.rd1234"
+            "value": "SecureP@ssword"
         },
         "vmNamePrefix": {
             "value": "az104-11-vm"
@@ -33,7 +33,7 @@
             "value": "10.0.0.0/24"
         },
         "virtualNetworkResourceGroup": {
-            "value": "az104-11-rg0"
+            "value": "rg1-az104-student01"
         },
         "subnet0Name": {
             "value": "subnet0"
