@@ -42,7 +42,7 @@ In this task, you will deploy two virtual machines that will be used to test dif
 
     >**Note**: The lab files may be in your local **Downloads** directory, or elsewhere depending on where you downloaded them to.
 
-1. **Edit the Parameters and Template file** you just uploaded and **change virtualNetworkResourceGroup value to match the RG in your environment**. Also, change the adminPassword as needed. If you need help editing the file in the Shell please ask your instructor for assistance. As a best practice, secrets, like passwords, should be more securely stored in the Key Vault. 
+1. **Edit the Parameters file** you just uploaded and **change virtualNetworkResourceGroup value to match the RG in your environment**. Also, change the adminPassword as needed. If you need help editing the file in the Shell please ask your instructor for assistance. As a best practice, secrets, like passwords, should be more securely stored in a Key Vault. 
 
 1. From the Cloud Shell pane, run the following to specify the resource group that will be hosting the virtual machines. Type each command line separately and execute them separately:
 
@@ -51,6 +51,7 @@ In this task, you will deploy two virtual machines that will be used to test dif
     ```
     
    ```powershell
+   #ensure the following value for $rgName matches the resource group in your enviornment
    $rgName = 'rg1-az104-student01'
     ```
 
