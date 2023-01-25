@@ -1,0 +1,279 @@
+az group create --name rg1-az104-jsocstudent01 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent01 --location usgovvirginia
+az role assignment create --assignee jsoc.student1@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent01
+az role assignment create --assignee jsoc.student1@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent01
+
+az group create --name rg1-az104-jsocstudent02 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent02 --location usgovvirginia
+az role assignment create --assignee jsoc.student2@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent02
+az role assignment create --assignee jsoc.student2@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent02
+
+az group create --name rg1-az104-jsocstudent03 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent03 --location usgovvirginia
+az role assignment create --assignee jsoc.student3@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent03
+az role assignment create --assignee jsoc.student3@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent03
+
+az group create --name rg1-az104-jsocstudent04 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent04 --location usgovvirginia
+az role assignment create --assignee jsoc.student4@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent04
+az role assignment create --assignee jsoc.student4@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent04
+
+az group create --name rg1-az104-jsocstudent05 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent05 --location usgovvirginia
+az role assignment create --assignee jsoc.student5@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent05
+az role assignment create --assignee jsoc.student5@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent05
+
+az group create --name rg1-az104-jsocstudent06 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent06 --location usgovvirginia
+az role assignment create --assignee jsoc.student6@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent06
+az role assignment create --assignee jsoc.student6@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent06
+
+az group create --name rg1-az104-jsocstudent07 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent07 --location usgovvirginia
+az role assignment create --assignee jsoc.student7@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent07
+az role assignment create --assignee jsoc.student7@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent07
+
+az group create --name rg1-az104-jsocstudent08 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent08 --location usgovvirginia
+az role assignment create --assignee jsoc.student8@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent08
+az role assignment create --assignee jsoc.student8@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent08
+
+az group create --name rg1-az104-jsocstudent09 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent09 --location usgovvirginia
+az role assignment create --assignee jsoc.student9@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent09
+az role assignment create --assignee jsoc.student9@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent09
+
+az group create --name rg1-az104-jsocstudent10 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent10 --location usgovvirginia
+az role assignment create --assignee jsoc.student10@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent10
+az role assignment create --assignee jsoc.student10@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent10
+
+az group create --name rg1-az104-jsocstudent11 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent11 --location usgovvirginia
+az role assignment create --assignee jsoc.student11@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent11
+az role assignment create --assignee jsoc.student11@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent11
+
+az group create --name rg1-az104-jsocstudent12 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent12 --location usgovvirginia
+az role assignment create --assignee jsoc.student12@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent12
+az role assignment create --assignee jsoc.student12@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent12
+
+az group create --name rg1-az104-jsocstudent13 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent13 --location usgovvirginia
+az role assignment create --assignee jsoc.student13@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent13
+az role assignment create --assignee jsoc.student13@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent13
+
+az group create --name rg1-az104-jsocstudent14 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent14 --location usgovvirginia
+az role assignment create --assignee jsoc.student14@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent14
+az role assignment create --assignee jsoc.student14@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent14
+
+az group create --name rg1-az104-jsocstudent15 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent15 --location usgovvirginia
+az role assignment create --assignee jsoc.student15@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent15
+az role assignment create --assignee jsoc.student15@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent15
+
+az group create --name rg1-az104-jsocstudent16 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent16 --location usgovvirginia
+az role assignment create --assignee jsoc.student16@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent16
+az role assignment create --assignee jsoc.student16@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent16
+
+az group create --name rg1-az104-jsocstudent17 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent17 --location usgovvirginia
+az role assignment create --assignee jsoc.student17@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent17
+az role assignment create --assignee jsoc.student17@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent17
+
+az group create --name rg1-az104-jsocstudent18 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent18 --location usgovvirginia
+az role assignment create --assignee jsoc.student18@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent18
+az role assignment create --assignee jsoc.student18@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent18
+
+az group create --name rg1-az104-jsocstudent19 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent19 --location usgovvirginia
+az role assignment create --assignee jsoc.student19@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent19
+az role assignment create --assignee jsoc.student19@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent19
+
+az group create --name rg1-az104-jsocstudent20 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent20 --location usgovvirginia
+az role assignment create --assignee jsoc.student20@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent20
+az role assignment create --assignee jsoc.student20@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent20
+
+az group create --name rg1-az104-jsocstudent21 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent21 --location usgovvirginia
+az role assignment create --assignee jsoc.student21@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent21
+az role assignment create --assignee jsoc.student21@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent21
+
+az group create --name rg1-az104-jsocstudent22 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent22 --location usgovvirginia
+az role assignment create --assignee jsoc.student22@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent22
+az role assignment create --assignee jsoc.student22@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent22
+
+az group create --name rg1-az104-jsocstudent23 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent23 --location usgovvirginia
+az role assignment create --assignee jsoc.student23@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent23
+az role assignment create --assignee jsoc.student23@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent23
+
+az group create --name rg1-az104-jsocstudent24 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent24 --location usgovvirginia
+az role assignment create --assignee jsoc.student24@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent24
+az role assignment create --assignee jsoc.student24@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent24
+
+az group create --name rg1-az104-jsocstudent25 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent25 --location usgovvirginia
+az role assignment create --assignee jsoc.student25@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent25
+az role assignment create --assignee jsoc.student25@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent25
+
+az group create --name rg1-az104-jsocstudent26 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent26 --location usgovvirginia
+az role assignment create --assignee jsoc.student26@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent26
+az role assignment create --assignee jsoc.student26@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent26
+
+az group create --name rg1-az104-jsocstudent27 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent27 --location usgovvirginia
+az role assignment create --assignee jsoc.student27@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent27
+az role assignment create --assignee jsoc.student27@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent27
+
+az group create --name rg1-az104-jsocstudent28 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent28 --location usgovvirginia
+az role assignment create --assignee jsoc.student28@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent28
+az role assignment create --assignee jsoc.student28@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent28
+
+az group create --name rg1-az104-jsocstudent29 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent29 --location usgovvirginia
+az role assignment create --assignee jsoc.student29@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent29
+az role assignment create --assignee jsoc.student29@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent29
+
+az group create --name rg1-az104-jsocstudent30 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent30 --location usgovvirginia
+az role assignment create --assignee jsoc.student30@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent30
+az role assignment create --assignee jsoc.student30@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent30
+
+az group create --name rg1-az104-jsocstudent31 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent31 --location usgovvirginia
+az role assignment create --assignee jsoc.student31@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent31
+az role assignment create --assignee jsoc.student31@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent31
+
+az group create --name rg1-az104-jsocstudent32 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent32 --location usgovvirginia
+az role assignment create --assignee jsoc.student32@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent32
+az role assignment create --assignee jsoc.student32@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent32
+
+az group create --name rg1-az104-jsocstudent33 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent33 --location usgovvirginia
+az role assignment create --assignee jsoc.student33@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent33
+az role assignment create --assignee jsoc.student33@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent33
+
+az group create --name rg1-az104-jsocstudent34 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent34 --location usgovvirginia
+az role assignment create --assignee jsoc.student34@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent34
+az role assignment create --assignee jsoc.student34@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent34
+
+az group create --name rg1-az104-jsocstudent35 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent35 --location usgovvirginia
+az role assignment create --assignee jsoc.student35@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent35
+az role assignment create --assignee jsoc.student35@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent35
+
+az group create --name rg1-az104-jsocstudent36 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent36 --location usgovvirginia
+az role assignment create --assignee jsoc.student36@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent36
+az role assignment create --assignee jsoc.student36@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent36
+
+az group create --name rg1-az104-jsocstudent37 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent37 --location usgovvirginia
+az role assignment create --assignee jsoc.student37@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent37
+az role assignment create --assignee jsoc.student37@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent37
+
+az group create --name rg1-az104-jsocstudent38 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent38 --location usgovvirginia
+az role assignment create --assignee jsoc.student38@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent38
+az role assignment create --assignee jsoc.student38@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent38
+
+az group create --name rg1-az104-jsocstudent39 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent39 --location usgovvirginia
+az role assignment create --assignee jsoc.student39@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent39
+az role assignment create --assignee jsoc.student39@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent39
+
+az group create --name rg1-az104-jsocstudent40 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent40 --location usgovvirginia
+az role assignment create --assignee jsoc.student40@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent40
+az role assignment create --assignee jsoc.student40@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent40
+
+az group create --name rg1-az104-jsocstudent41 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent41 --location usgovvirginia
+az role assignment create --assignee jsoc.student41@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent41
+az role assignment create --assignee jsoc.student41@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent41
+
+az group create --name rg1-az104-jsocstudent42 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent42 --location usgovvirginia
+az role assignment create --assignee jsoc.student42@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent42
+az role assignment create --assignee jsoc.student42@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent42
+
+az group create --name rg1-az104-jsocstudent43 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent43 --location usgovvirginia
+az role assignment create --assignee jsoc.student43@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent43
+az role assignment create --assignee jsoc.student43@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent43
+
+az group create --name rg1-az104-jsocstudent44 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent44 --location usgovvirginia
+az role assignment create --assignee jsoc.student44@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent44
+az role assignment create --assignee jsoc.student44@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent44
+
+az group create --name rg1-az104-jsocstudent45 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent45 --location usgovvirginia
+az role assignment create --assignee jsoc.student45@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent45
+az role assignment create --assignee jsoc.student45@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent45
+
+az group create --name rg1-az104-jsocstudent46 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent46 --location usgovvirginia
+az role assignment create --assignee jsoc.student46@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent46
+az role assignment create --assignee jsoc.student46@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent46
+
+az group create --name rg1-az104-jsocstudent47 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent47 --location usgovvirginia
+az role assignment create --assignee jsoc.student47@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent47
+az role assignment create --assignee jsoc.student47@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent47
+
+az group create --name rg1-az104-jsocstudent48 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent48 --location usgovvirginia
+az role assignment create --assignee jsoc.student48@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent48
+az role assignment create --assignee jsoc.student48@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent48
+
+az group create --name rg1-az104-jsocstudent49 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent49 --location usgovvirginia
+az role assignment create --assignee jsoc.student49@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent49
+az role assignment create --assignee jsoc.student49@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent49
+
+az group create --name rg1-az104-jsocstudent50 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent50 --location usgovvirginia
+az role assignment create --assignee jsoc.student50@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent50
+az role assignment create --assignee jsoc.student50@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent50
+
+az group create --name rg1-az104-jsocstudent51 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent51 --location usgovvirginia
+az role assignment create --assignee jsoc.student51@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent51
+az role assignment create --assignee jsoc.student51@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent51
+
+az group create --name rg1-az104-jsocstudent52 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent52 --location usgovvirginia
+az role assignment create --assignee jsoc.student52@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent52
+az role assignment create --assignee jsoc.student52@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent52
+
+az group create --name rg1-az104-jsocstudent53 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent53 --location usgovvirginia
+az role assignment create --assignee jsoc.student53@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent53
+az role assignment create --assignee jsoc.student53@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent53
+
+az group create --name rg1-az104-jsocstudent54 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent54 --location usgovvirginia
+az role assignment create --assignee jsoc.student54@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent54
+az role assignment create --assignee jsoc.student54@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent54
+
+az group create --name rg1-az104-jsocstudent55 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent55 --location usgovvirginia
+az role assignment create --assignee jsoc.student55@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent55
+az role assignment create --assignee jsoc.student55@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent55
+
+az group create --name rg1-az104-jsocstudent56 --location usgovvirginia
+az group create --name rg2-az104-jsocstudent56 --location usgovvirginia
+az role assignment create --assignee jsoc.student56@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg1-az104-jsocstudent56
+az role assignment create --assignee jsoc.student56@mtnnet.us --role owner --scope /subscriptions/c7c39807-92fa-4bcb-8d7f-a604845698d0/resourceGroups/rg2-az104-jsocstudent56
