@@ -19,16 +19,6 @@ Lab steps in this repo assume a few steps have already been set up in the Azure 
 
 ## AZ CLI script to accomplish requirements:
 ```bash
-# Your script goes here
-
-4. After adding the script, scroll down and add a commit message summarizing your changes.
-
-5. Click on "Commit changes".
-
-Here's how you would add the bash script:
-
-```markdown
-```bash
 #!/bin/bash
 
 # Variables
