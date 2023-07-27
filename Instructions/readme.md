@@ -89,3 +89,5 @@ customRoleId=$(az role definition create --role-definition '{
 }' --query id --output tsv)
 
 az role assignment create --assignee $studentGroupName --role $customRoleId
+```
+## Replace `<subscription-id>` with your actual subscription ID. Also, remember to uncomment the `az login` line and login to your Azure Government account when you're ready to run the script.
