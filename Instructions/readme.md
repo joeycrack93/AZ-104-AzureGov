@@ -18,6 +18,7 @@ Lab steps in this repo assume a few steps have already been set up in the Azure 
    >- Microsoft.Compute/virtualMachines/runCommand/action
 
 ## AZ CLI script to accomplish requirements:
+### Replace `<subscription-id>` with your actual subscription ID. Also, remember to uncomment the `az login` line and login to your Azure Government account when you're ready to run the script.
 ```bash
 #!/bin/bash
 
@@ -90,4 +91,4 @@ customRoleId=$(az role definition create --role-definition '{
 
 az role assignment create --assignee $studentGroupName --role $customRoleId
 ```
-## Replace `<subscription-id>` with your actual subscription ID. Also, remember to uncomment the `az login` line and login to your Azure Government account when you're ready to run the script.
+
