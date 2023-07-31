@@ -24,7 +24,6 @@ Lab steps in this repo assume a few steps have already been set up in the Azure 
 
 # Variables
 subscriptionId="<subscription-id>"
-trainingSubscriptionName="Training"
 studentCount=30
 instructorCount=2
 studentGroupName="studentGroup"
