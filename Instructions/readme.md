@@ -21,13 +21,16 @@ Lab steps in this repo assume a few steps have already been set up in the Azure 
 ### Replace `<subscription-id>` with your actual subscription ID. Also, remember to uncomment the `az login` line and login to your Azure Government account when you're ready to run the script.
 ### Network Watcher: ensure it is enabled, and the RG name matches, in the subscription you are running this script against. 
 ```bash
+
 #!/bin/bash
 
 # Variables
-subscriptionId="<subscription-id>"
+subscriptionId="your subscription ID here"
+# Adjust student & instructor count as necessary.
 studentCount=30
 instructorCount=2
-studentGroupName="studentGroup"
+studentGroupName="az104studentGroup"
+# Ensure RG name matches in your environment. Default is NetworkWatcherRG.
 networkWatcherRG="NetworkWatcherRG"
 
 # Set the Azure Government environment
@@ -47,40 +50,48 @@ az provider register --namespace Microsoft.Network
 # Create Azure AD identities for students and instructors
 for ((i=1; i<=$studentCount; i++))
 do
-  az ad user create --display-name "Student$i" --password "Student$i@123" --user-principal-name "student$i@domain.com" --force-change-password-next-login true
+  az ad user create --display-name "az104student$i" --password "SecureP@ssword" --user-principal-name "az104student$i@domain.us" --force-change-password-next-sign-in true
 done
 
 for ((i=1; i<=$instructorCount; i++))
 do
-  az ad user create --display-name "Instructor$i" --password "Instructor$i@123" --user-principal-name "instructor$i@domain.com" --force-change-password-next-login true
+  az ad user create --display-name "az104instructor$i" --password "SecureP@ssword" --user-principal-name "instructor$i@domain.us" --force-change-password-next-sign-in true
 done
 
 # Create AAD security group for students
 az ad group create --display-name $studentGroupName --mail-nickname $studentGroupName
 
 # Add students to the group
+# If you encounter issues at this point, try manually adding student & instructor users to the group.
 for ((i=1; i<=$studentCount; i++))
 do
-  az ad group member add --group $studentGroupName --member-id $(az ad user show --id "student$i@domain.com" --query objectId --output tsv)
+  memberId=$(az ad user show --id "az104student$i@domain.us" --query objectId --output tsv)
+  if [ -z "$memberId" ]; then
+    echo "Error: Could not find object ID for az104student$i@domain.us"
+  else
+    az ad group member add --group $studentGroupName --member-id $memberId
+  fi
 done
 
 # Create resource groups for students in usgovvirginia region
 for ((i=1; i<=$studentCount; i++))
 do
-  az group create --name "Student${i}RG1" --location "usgovvirginia"
-  az group create --name "Student${i}RG2" --location "usgovvirginia"
+  az group create --name "az104student${i}RG1" --location "usgovvirginia"
+  az group create --name "az104student${i}RG2" --location "usgovvirginia"
 
   # Assign owner role to the student
-  az role assignment create --assignee "student$i@domain.com" --role Owner --resource-group "Student${i}RG1"
-  az role assignment create --assignee "student$i@domain.com" --role Owner --resource-group "Student${i}RG2"
+  az role assignment create --assignee "az104student$i@domain.us" --role Owner --resource-group "az104student${i}RG1"
+  az role assignment create --assignee "az104student$i@domain.us" --role Owner --resource-group "az104student${i}RG2"
 done
 
 # Assign students AAD security group as "reader" RBAC on NetworkWaterRG
+# might need to change --assignee to --assignee-object-id and manually input obj ID.
 az role assignment create --assignee $studentGroupName --role Reader --resource-group $networkWatcherRG
 
 # Create custom RBAC role and assign to students AAD security group
+# might need to change --assignee to --assignee-object-id and manually input obj ID.
 customRoleId=$(az role definition create --role-definition '{
-    "Name": "CustomRole",
+    "Name": "AZ104runVMcommands",
     "Description": "Allows running commands on VMs",
     "Actions": [
         "Microsoft.Compute/locations/runCommands/read",
