@@ -54,7 +54,7 @@ done
 
 for ((i=1; i<=$instructorCount; i++))
 do
-  az ad user create --display-name "az104instructor$i" --password "SecureP@ssword" --user-principal-name "instructor$i@domain.us" --force-change-password-next-sign-in true
+  az ad user create --display-name "az104instructor$i" --password "SecureP@ssword" --user-principal-name "az104instructor$i@domain.us" --force-change-password-next-sign-in true
 done
 
 # Create AAD security group for students
