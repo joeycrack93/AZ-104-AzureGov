@@ -19,6 +19,7 @@ Lab steps in this repo assume a few steps have already been set up in the Azure 
 
 ## AZ CLI script to accomplish requirements:
 ### Replace `<subscription-id>` with your actual subscription ID. Also, remember to uncomment the `az login` line and login to your Azure Government account when you're ready to run the script.
+### Network Watcher: ensure it is enabled, and the RG name matches, in the subscription you are running this script against. 
 ```bash
 #!/bin/bash
 
@@ -27,7 +28,7 @@ subscriptionId="<subscription-id>"
 studentCount=30
 instructorCount=2
 studentGroupName="studentGroup"
-networkWatcherRG="NetworkWaterRG"
+networkWatcherRG="NetworkWatcherRG"
 
 # Set the Azure Government environment
 az cloud set --name AzureUSGovernment
