@@ -36,7 +36,7 @@ networkWatcherRG="NetworkWatcherRG"
 az cloud set --name AzureUSGovernment
 
 # Login to your Azure Government account
-# az login
+az login
 
 # Set the subscription
 az account set --subscription $subscriptionId
