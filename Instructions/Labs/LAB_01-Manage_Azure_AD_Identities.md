@@ -44,7 +44,7 @@ In this task, you will create and configure Azure AD users.
 
 1. On the Azure Active Directory blade, scroll down to the **Manage** section, click **User settings**, and review available configuration options. Notice they will be greyed out unless you have sufficient permissions to make changes.
 
-**From this point onward, you will run into permission limitations (as mentioned at the beginning of this readme) if you are using an instructor-provided account.
+**From this point onward, you will run into permission limitations (as mentioned at the beginning of this readme) unless you are using an account with elevated Azure AD permissions.
 
 1. On the Azure Active Directory blade, in the **Manage** section, click **Users**, and then click your user account to display its **Profile** settings. 
 
