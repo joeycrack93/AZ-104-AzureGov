@@ -88,6 +88,8 @@ In this task, you will configure web app deployment settings.
     
 1. On the **Settings** tab, in the **Source** drop-down list, select **Local Git** and click the **Save** button
 
+    >**Note:** If you encounter error "Basic authentication is disabled...", go to configuration settings, select "General settings", and change "Basic Auth Publishing Credentials" to "On", change "FTP state" to "All allowed", then save.
+
 1. On the **Deployment Center** blade, copy the **Git Clone Url** entry to Notepad.
 
     >**Note:** You will need the Git Clone Url value in the next task of this lab.
