@@ -171,9 +171,9 @@ In this task, you will install Windows Server Web Server role on the two Azure v
 
     >**Note**: Disregard the message stating **The resource group is in a location that is not supported by one or more resources in the template. Please choose a different resource group**. This is expected and can be ignored in this case.
 
-1. On the **Edit template** blade, in the section displaying the content of the template, insert the following code starting with line **20** (directly underneath the `"resources": [` line):
+1. On the **Edit template** blade, in the section displaying the content of the template, insert the following code starting with line **32** (directly underneath the `"resources": [` line):
 
-   >**Note**: If you are using a tool that pastes the code in line by line intellisense may add extra brackets causing validation errors. You may want to paste the code into notepad first and then paste it into line 20.
+   >**Note**: If you are using a tool that pastes the code in line by line intellisense may add extra brackets causing validation errors. You may want to paste the code into notepad first and then paste it into line 32.
 
    ```json
         {
