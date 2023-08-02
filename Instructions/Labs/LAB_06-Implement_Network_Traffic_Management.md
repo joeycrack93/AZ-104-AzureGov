@@ -84,7 +84,6 @@ In this task, you will deploy four virtual machines into the same Azure region. 
 
    ```powershell
    #Note - ensure you change the following resource group name to match the RG in your lab environment
-   $rgName = 'rg1-az104-student01'
    $location = (Get-AzResourceGroup -ResourceGroupName $rgName).location
    $vmNames = (Get-AzVM -ResourceGroupName $rgName).Name
 
