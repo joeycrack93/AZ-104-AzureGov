@@ -121,7 +121,6 @@ In this task, you will deploy Azure virtual machines into different availability
     | Virtual Machine RG | **rg1-az104-student01** |    
     | Admin Username | **Student** |
     | Admin Password | **Provide a secure password**  |
-    | Zone | **2** |
 
     >**Note**: You need to modify parameters corresponding to the properties of the distinct resources you are deploying by using the template, including the virtual machine and its network interface.
 
