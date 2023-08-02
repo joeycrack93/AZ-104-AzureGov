@@ -141,16 +141,11 @@ In this task, you will configure static assignment of public and private IP addr
 
 1. In the list IP configurations, click **ipconfig1**.
 
-1. On the **ipconfig1** blade, in the **Public IP address settings** section, select **Associate**, click **+ Create new**, specify the following settings, and click **OK**:
-
-    | Setting | Value |
-    | --- | --- |
-    | Name | **az104-04-pip0** |
-    | SKU | **Standard** |
-
 1. On the **ipconfig1** blade, set **Assignment** to **Static**, leave the default value of **IP address** set to **10.40.0.4**.
 
-1. Back on the **ipconfig1** blade, save the changes. Make sure to wait for the save operation to complete before you proceed to the next step.
+1. On the **ipconfig1** blade, in the **Public IP address settings** section, select **Associate**, leave default values, and click **Save**.
+
+Make sure to wait for the save operation to complete before you proceed to the next step.
 
 1. Navigate back to the **az104-04-vnet1** blade
 
@@ -160,16 +155,11 @@ In this task, you will configure static assignment of public and private IP addr
 
 1. In the list IP configurations, click **ipconfig1**.
 
-1. On the **ipconfig1** blade, in the **Public IP address settings** section, select **Associate**, click **+ Create new**, specify the following settings, and click **OK**:
-
-    | Setting | Value |
-    | --- | --- |
-    | Name | **az104-04-pip1** |
-    | SKU | **Standard** |
-
 1. On the **ipconfig1** blade, set **Assignment** to **Static**, leave the default value of **IP address** set to **10.40.1.4**.
 
-1. Back on the **ipconfig1** blade, save the changes.
+1. On the **ipconfig1** blade, in the **Public IP address settings** section, select **Associate**, leave default values, and click **Save**.
+
+1. Make sure to wait for the save operation to complete before you proceed to the next step.
 
 1. Navigate back to the **az104-04-rg1** resource group blade, in the list of its resources, click **az104-04-vm0**, and from the **az104-04-vm0** virtual machine blade, note the public IP address entry.
 
