@@ -4,7 +4,7 @@
 
 Labs 01 to 02a **will only function if you have full ownership of your tenant**. If you are using a provided student account, you do not have required permissions and should utilize the interactive lab simulation below **or** sign up for a [free Azure account + tenant](https://azure.microsoft.com/en-us/free/search/)
 
-*Note when using free Azure tenant - Please notify your instructor, if applicable, if you're using this option. There are minor differences in the lab steps and JSON parameters that must be modified.*
+*Note when using free Azure tenant - Please notify your instructor, if applicable, if you're using this option. There are minor differences in the lab steps and JSON parameters that must be modified because free tenants are hosted on Azure Commercial rather than Gov.*
 
 
 
