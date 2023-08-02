@@ -100,5 +100,26 @@ customRoleId=$(az role definition create --role-definition '{
 }' --query id --output tsv)
 
 az role assignment create --assignee $studentGroupName --role $customRoleId
+
+# Assign instructor accounts read access to all student resource groups
+# Manually input the object IDs for the instructor accounts
+instructor1ObjectId="object-id-for-instructor-1"
+instructor2ObjectId="object-id-for-instructor-2"
+
+instructorObjectIds=($instructor1ObjectId $instructor2ObjectId)
+
+for objectId in "${instructorObjectIds[@]}"
+do
+  if [ -z "$objectId" ]; then
+    echo "Error: Object ID is empty"
+  else
+    for ((j=1; j<=$studentCount; j++))
+    do
+      az role assignment create --assignee-object-id "$objectId" --role Reader --resource-group "az104student${j}RG1"
+      az role assignment create --assignee-object-id "$objectId" --role Reader --resource-group "az104student${j}RG2"
+    done
+  fi
+done
+
 ```
 
