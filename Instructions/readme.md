@@ -44,6 +44,8 @@ az account set --subscription $subscriptionId
 # Register all resource providers
 az provider register --namespace Microsoft.Compute
 az provider register --namespace Microsoft.Network
+az provider register --namespace Microsoft.Kubernetes
+az provider register --namespace Microsoft.KubernetesConfiguration
 # Add other providers as needed
 
 # Create Azure AD identities for students and instructors
