@@ -80,17 +80,16 @@ In this task, you will deploy an Azure Kubernetes Services cluster by using the 
 
     | Setting | Value |
     | ---- | ---- |
-    | Authentication method | **System-assigned managed identity** (default - no change) | 
-    | Role-based access control (RBAC) | **Enabled** |
+    | Authentication and Authorization | **Local accounts with Kubernetes RBAC** (default - no change) | 
 
 1. Click **Next: Networking >** and, on the **Networking** tab of the **Create Kubernetes cluster** blade, specify the following settings (leave others with their default values):
 
     | Setting | Value |
     | ---- | ---- |
-    | Network configuration | **Azure CNI** (default) |
+    | Network configuration | **Kubenet** (default) |
     | DNS name prefix | any valid, globally unique DNS prefix (use default) |
 
-1. Click **Next: Integrations >**, on the **Integrations** tab of the **Create Kubernetes cluster** blade, set **Container monitoring** to **Disabled**, click **Review + create**, ensure that the validation passed and click **Create**.
+1. Click **Review + create**, ensure that the validation passed and click **Create**.
 
     >**Note**: In production scenarios, you would want to enable monitoring. Monitoring is disabled in this case since it is not covered in the lab.
 
