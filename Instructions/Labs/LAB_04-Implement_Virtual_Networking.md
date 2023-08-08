@@ -129,6 +129,20 @@ In this task, you will configure static assignment of public and private IP addr
 
    >**Note**: Private and public IP addresses are actually assigned to the network interfaces, which, in turn are attached to Azure virtual machines, however, it is fairly common to refer to IP addresses assigned to Azure VMs instead.
 
+1. In the Azure portal, search for and select **Public IP Addresses**, and click **Create New**.
+
+    | Setting | Value |
+    | --- | --- |
+    | Subscription | the name of the Azure subscription you are using in this lab |
+    | Resource Group | **rg1-az104-student01** |
+    | Name | **pip1-lab4-student01** |
+    | Region | US Gov Virginia |
+
+1. Select **Review + create**.
+
+2. Please create another Public IP Address, this time name it **pip2-lab4-student01**
+    >**Note**: The name of your Public IPs must be unique. Please replace the student number, or name, to be unique.
+
 1. In the Azure portal, search for and select **Resource groups**, and, on the **Resource groups** blade, click **rg1-az104-student01**.
 
 1. On the **az104-04-rg1** resource group blade, in the list of its resources, click **az104-04-vnet1**.
@@ -143,7 +157,7 @@ In this task, you will configure static assignment of public and private IP addr
 
 1. On the **ipconfig1** blade, set **Assignment** to **Static**, leave the default value of **IP address** set to **10.40.0.4**.
 
-1. On the **ipconfig1** blade, in the **Public IP address settings** section, select **Associate**, leave default values, and click **Save**.
+1. On the **ipconfig1** blade, in the **Public IP address settings** section, select **Associate**, select **pip1** you created, and click **Save**.
 
 Make sure to wait for the save operation to complete before you proceed to the next step.
 
@@ -157,7 +171,7 @@ Make sure to wait for the save operation to complete before you proceed to the n
 
 1. On the **ipconfig1** blade, set **Assignment** to **Static**, leave the default value of **IP address** set to **10.40.1.4**.
 
-1. On the **ipconfig1** blade, in the **Public IP address settings** section, select **Associate**, leave default values, and click **Save**.
+1. On the **ipconfig1** blade, in the **Public IP address settings** section, select **Associate**, select **pip2** you created, and click **Save**.
 
 1. Make sure to wait for the save operation to complete before you proceed to the next step.
 
