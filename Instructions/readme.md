@@ -6,6 +6,7 @@ Lab steps in this repo assume a few steps have already been set up in the Azure 
 
 - Standalone "Training" subscription.
 - Register all resource providers in "Training" subscription.
+- Ensure Public IP addresses are allowed.
 - Need at least 1x subscription "owner" present during training.
 - Need at least 1x AAD "global admin" present during training.
 - Azure AD identities must be created for each student and instructor.
