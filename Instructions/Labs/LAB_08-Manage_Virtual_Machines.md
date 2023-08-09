@@ -171,7 +171,7 @@ In this task, you will install Windows Server Web Server role on the two Azure v
 
     >**Note**: Disregard the message stating **The resource group is in a location that is not supported by one or more resources in the template. Please choose a different resource group**. This is expected and can be ignored in this case.
 
-1. On the **Edit template** blade, in the section displaying the content of the template, insert the following code directly underneath the `"resources": [` line:
+1. On the **Edit template** blade, in the section displaying the content of the template, remove lines 5 to 16 in the template, which should consist of VM extension data. Then insert the following code directly underneath the `"resources": [` line:
 
    >**Note**: If you are using a tool that pastes the code in line by line intellisense may add extra brackets causing validation errors..
 
